@@ -1,0 +1,9 @@
+namespace AmsModels;
+
+public partial class Aspnetusertokens
+{
+    public int Id { get; set; }
+    public string LoginProvider { get; set; } = "";
+    public string Name { get; set; } = "";
+    public string Value { get; set; } = "";
+}

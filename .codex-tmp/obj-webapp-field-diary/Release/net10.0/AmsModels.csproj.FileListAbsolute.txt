@@ -1,0 +1,5 @@
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\.codex-tmp\obj-webapp-field-diary\Release\net10.0\AmsModels.csproj.AssemblyReference.cache
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\.codex-tmp\obj-webapp-field-diary\Release\net10.0\AmsModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\.codex-tmp\obj-webapp-field-diary\Release\net10.0\AmsModels.AssemblyInfoInputs.cache
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\.codex-tmp\obj-webapp-field-diary\Release\net10.0\AmsModels.AssemblyInfo.cs
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\.codex-tmp\obj-webapp-field-diary\Release\net10.0\AmsModels.csproj.CoreCompileInputs.cache
