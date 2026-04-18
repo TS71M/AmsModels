@@ -66,11 +66,17 @@ public partial class User : IdentityUser<int>
 
     public int? PreferredCountryId { get; set; }
     public int? PreferredLanguageId { get; set; }
+    public int? VisualizationTempUnitId { get; set; }
+    public int? VisualizationRainUnitId { get; set; }
+    public int? VisualizationWindUnitId { get; set; }
 
     public virtual string RolesTxt => UserRole.Count > 0 ? string.Join(" ,", [.. UserRole.Select(ur => ur.Role.Name)]) : "no Roles available";
 
     public Country? PreferredCountry { get; set; }
     public Language? PreferredLanguage{ get; set; }
+    public Unit? VisualizationTempUnit { get; set; }
+    public Unit? VisualizationRainUnit { get; set; }
+    public Unit? VisualizationWindUnit { get; set; }
     public AppImage? UserImg { get; set; }
     public Name? Name { get; set; }
     public Ibu? Ibu { get; set; }
@@ -85,4 +91,4 @@ public partial class User : IdentityUser<int>
     public virtual ICollection<SnagList> CreatedSnagLists { get; set; } = [];
     public virtual ICollection<AppImage> UploadedImages { get; set; } = [];
     public virtual ICollection<UserFieldPermission> UserFieldPermissions { get; set; } = [];
-}
+}
