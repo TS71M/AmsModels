@@ -100,4 +100,5 @@ public partial class Product
     public virtual ICollection<Order> Orders { get; set; } = [];
     public virtual ICollection<ProductNutrient> ProductNutrients { get; set; } = [];
     public virtual ICollection<ProductSupplement> ProductSupplements { get; set; } = [];
+    public virtual ICollection<PurchaseRequisitionLine> PurchaseRequisitionLines { get; set; } = [];
 }

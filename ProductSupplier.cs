@@ -50,5 +50,6 @@ public class ProductSupplier
     public required Supplier Supplier { get; set; }
 
     public virtual ICollection<Order> Orders { get; set; } = [];
+    public virtual ICollection<PurchaseRequisitionLine> PurchaseRequisitionLines { get; set; } = [];
     public virtual ICollection<RequestPrice> RequestPrices { get; set; } = [];
 }

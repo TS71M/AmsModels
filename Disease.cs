@@ -11,19 +11,19 @@ public partial class Disease
     public Guid PubId { get; set; }
 
     [Required]
-    public string DisNam { get; set; } = "";
+    public string Name { get; set; } = "";
 
-    [ForeignKey(nameof(IndPic))]
-    public int IndPicId { get; set; }
+    [ForeignKey(nameof(IndicatorPicture))]
+    public int IndicatorPictureId { get; set; }
     public string History { get; set; } = "";
-    public string SymAndSig { get; set; } = "";
-    public string CauAge { get; set; } = "";
+    public string SymptomsAndSigns { get; set; } = "";
+    public string CausalAgent { get; set; } = "";
 
-    [ForeignKey(nameof(DisCycPic))]
-    public int DisCycPicId { get; set; }
-    public string DisPicDes { get; set; } = "";
-    public string Epidemology { get; set; } = "";
-    public string DisMgt { get; set; } = "";
+    [ForeignKey(nameof(DiseaseCyclePicture))]
+    public int DiseaseCyclePictureId { get; set; }
+    public string DiseasePictureDescription { get; set; } = "";
+    public string Epidemiology { get; set; } = "";
+    public string DiseaseManagement { get; set; } = "";
     public decimal TempMax { get; set; }
     public decimal TempMin { get; set; }
     public decimal TempNight { get; set; }
@@ -33,13 +33,14 @@ public partial class Disease
     public bool VeryDry { get; set; }
 
     public bool IsValid => TempMin < TempMax;
-    public string DisCycPicImg => ImageX.ImageToString(DisCycPic?.ImageFile, ImageX.StandardImage.NoImage);
-    public string IndPicImg => ImageX.ImageToString(IndPic?.ImageFile, ImageX.StandardImage.NoImage);
+    public string DiseaseCyclePictureImage => ImageX.ImageToString(DiseaseCyclePicture?.ImageFile, ImageX.StandardImage.NoImage);
+    public string IndicatorPictureImage => ImageX.ImageToString(IndicatorPicture?.ImageFile, ImageX.StandardImage.NoImage);
 
-    public AppImage? DisCycPic { get; set; }
-    public AppImage? IndPic { get; set; }
+    public AppImage? DiseaseCyclePicture { get; set; }
+    public AppImage? IndicatorPicture { get; set; }
 
-    public virtual ICollection<DisAli> DisAlis { get; set; } = [];
-    public virtual ICollection<DisPic> DisPics { get; set; } = [];
-
-}
+    public virtual ICollection<DiseaseAlias> DiseaseAliases { get; set; } = [];
+    public virtual ICollection<DiseasePicture> DiseasePictures { get; set; } = [];
+    public virtual ICollection<DiseaseGrassType> DiseaseGrassTypes { get; set; } = [];
+    public virtual ICollection<DiseaseTrainingExample> DiseaseTrainingExamples { get; set; } = [];
+}

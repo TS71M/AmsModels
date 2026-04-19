@@ -52,6 +52,7 @@ public partial class Ibu
     public virtual ICollection<LoginLog> Logins { get; set; } = [];
     public virtual ICollection<Name> Names { get; set; } = [];
     public virtual ICollection<Product> Products { get; set; } = [];
+    public virtual ICollection<PurchaseRequisition> PurchaseRequisitions { get; set; } = [];
     public virtual ICollection<Supplier> Suppliers { get; set; } = [];
     public virtual ICollection<User> Users { get; set; } = [];
 

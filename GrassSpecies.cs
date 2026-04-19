@@ -1,4 +1,4 @@
-namespace AmsModels;
+ï»¿namespace AmsModels;
 
 [Index(nameof(PubId), IsUnique = true)]
 [Index(nameof(GrassTypeId))]
@@ -27,28 +27,24 @@ public partial class GrassSpecies
     [Required]
     public int GrassTypeId { get; set; }
 
-    // If you can, rename to NMaxYear for clarity (kept as NMax to match your current property)
     [Precision(6, 1)]
     public decimal NMaxYear { get; set; }
 
     [Precision(6, 1)]
     public decimal NMaxMonth { get; set; }
 
-    // K relative to N (dimensionless ratio)
     [Precision(5, 2)]
     public decimal KNRatioMin { get; set; } = 1.0m;
 
     [Precision(5, 2)]
     public decimal KNRatioMax { get; set; } = 1.5m;
 
-    // Soil pH preference range
     [Precision(4, 1)]
     public decimal PHMin { get; set; }
 
     [Precision(4, 1)]
     public decimal PHMax { get; set; }
 
-    // Salt tolerance range (keep int if you have a defined scale; otherwise consider 1–9 ratings)
     [Range(1, 9)]
     public int SaltToleranceMin { get; set; }
 
@@ -61,7 +57,6 @@ public partial class GrassSpecies
     [MaxLength(250)]
     public string? GrowthHabit { get; set; }
 
-    // These are often unknown in datasets; keep nullable to avoid data-layer fallback text pollution
     [MaxLength(250)]
     public string? LiguleLeafMargin { get; set; }
 
@@ -81,9 +76,8 @@ public partial class GrassSpecies
     public string? RootType { get; set; }
 
     public int? MainImageId { get; set; }
-    public bool ShowInGtsInterpretation { get; set; } 
-   
-    // Navigation
+    public bool ShowInGtsInterpretation { get; set; }
+
     public GrassType GrassType { get; set; } = default!;
 
     [ForeignKey(nameof(MainImageId))]
@@ -92,9 +86,7 @@ public partial class GrassSpecies
     public ICollection<GrassSpeciesAlias> GraCulAliases { get; set; } = [];
     public ICollection<GrassSpeciesChemical> GraCulChems { get; set; } = [];
     public ICollection<GrassSpeciesTimingProfile> GrassSpeciesTimingProfiles { get; set; } = [];
-    public ICollection<DieseaseGrassType> DiseaseGrassTypes { get; set; } = [];
 
-    // Optional convenience (not persisted)
     [NotMapped]
     public decimal KNRatioMean => (KNRatioMin + KNRatioMax) / 2m;
 }

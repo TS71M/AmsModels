@@ -24,6 +24,6 @@ public partial class GrassType
     public decimal OptimalTemperature { get; set; }
     public decimal Variation { get; set; }
 
-    public virtual ICollection<DieseaseGrassType> DieseaseGrassTypes { get; set; } = [];
+    public virtual ICollection<DiseaseGrassType> DiseaseGrassTypes { get; set; } = [];
     public virtual ICollection<GrassSpecies> GrassSpecies { get; set; } = [];
-}
+}

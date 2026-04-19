@@ -90,5 +90,10 @@ public partial class User : IdentityUser<int>
     public virtual ICollection<LoginLog> Logins { get; set; } = [];
     public virtual ICollection<SnagList> CreatedSnagLists { get; set; } = [];
     public virtual ICollection<AppImage> UploadedImages { get; set; } = [];
+    public virtual ICollection<DiseaseTrainingExample> SubmittedDiseaseTrainingExamples { get; set; } = [];
+    public virtual ICollection<DiseaseTrainingExample> ReviewedDiseaseTrainingExamples { get; set; } = [];
     public virtual ICollection<UserFieldPermission> UserFieldPermissions { get; set; } = [];
+    public virtual ICollection<FieldProcurementSetting> ManagedFieldProcurementSettings { get; set; } = [];
+    public virtual ICollection<PurchaseRequisition> RequestedPurchaseRequisitions { get; set; } = [];
+    public virtual ICollection<PurchaseRequisition> ManagedPurchaseRequisitions { get; set; } = [];
 }

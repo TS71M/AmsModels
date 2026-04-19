@@ -32,6 +32,7 @@ public partial class Supplier
     public Field? Field { get; set; }
     public required Ibu Ibu { get; set; }
 
+    public virtual ICollection<FieldProcurementSetting> FieldProcurementSettings { get; set; } = [];
     public virtual ICollection<Expense> Expenses { get; set; } = [];
     public virtual ICollection<Machine> Machineries { get; set; } = [];
     public virtual ICollection<OrdNum> OrdNums { get; set; } = [];

@@ -1,0 +1,5 @@
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\artifacts\obj-api-review\AmsModels.csproj.AssemblyReference.cache
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\artifacts\obj-api-review\AmsModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\artifacts\obj-api-review\AmsModels.AssemblyInfoInputs.cache
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\artifacts\obj-api-review\AmsModels.AssemblyInfo.cs
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\artifacts\obj-api-review\AmsModels.csproj.CoreCompileInputs.cache
