@@ -31,6 +31,7 @@ public partial class AppImage
 
 
     public GrassSpecies? GrassSpeciesMainImageFor { get; set; }
+    public ICollection<AreaCompositionPhoto> AreaCompositionPhotos { get; set; } = [];
     public ICollection<DiseasePicture> DiseasePictures { get; set; } = [];
     public ICollection<DiseaseTrainingExample> DiseaseTrainingExamples { get; set; } = [];
 

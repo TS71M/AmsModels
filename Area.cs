@@ -56,6 +56,7 @@ public partial class Area
 
     public virtual ICollection<AgrTask> AgrTasks { get; set; } = [];
     public virtual ICollection<AreaComposition> AreaCompositions { get; set; } = [];
+    public virtual ICollection<AreaCompositionPhoto> AreaCompositionPhotos { get; set; } = [];
     public virtual ICollection<ClippArea> ClippAreas { get; set; } = [];
     public virtual ICollection<CutHei> CutHeis { get; set; } = [];
     public virtual ICollection<Expense> Expenses { get; set; } = [];

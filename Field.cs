@@ -19,6 +19,7 @@ public class Field
     public int? FieldTypeId { get; set; }
     public int? JurisdictionId { get; set; }
     public int? ClimateZoneId { get; set; }
+    public int? PrimaryRiskAreaId { get; set; }
 
     [Required, MaxLength(100)]
     public string FieldName { get; set; } = "";
@@ -174,6 +175,8 @@ public class Field
     public Unit? TempUni { get; set; }
     public Jurisdiction? Jurisdiction { get; set; }
     public ClimateZone? ClimateZone { get; set; }
+    [ForeignKey(nameof(PrimaryRiskAreaId))]
+    public Area? PrimaryRiskArea { get; set; }
 
     public virtual ICollection<Area> Areas { get; set; } = [];
     public virtual ICollection<BudgetNum> BudgetNums { get; set; } = [];
@@ -192,6 +195,7 @@ public class Field
     public virtual ICollection<SnagList> SnagLists { get; set; } = [];
     public virtual ICollection<Surface> Surfaces { get; set; } = [];
     public virtual ICollection<TaskGlobal> TaskGlobals { get; set; } = [];
+    public virtual ICollection<IbuRelationshipField> IbuRelationshipFields { get; set; } = [];
     public virtual ICollection<UserFieldPermission> UserFieldPermissions { get; set; } = [];
     public virtual ICollection<WeatherObservation> WeatherObservations { get; set; } = [];
     public virtual ICollection<WeatherForecastHour> WeatherForecastHours { get; set; } = [];
