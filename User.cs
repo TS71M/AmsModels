@@ -44,6 +44,7 @@ public partial class User : IdentityUser<int>
     public bool ShowLastDays { get; set; }
     public bool ShowProgress { get; set; }
     public int? ContactDetailsId { get; set; }
+    public int? ManagerUserId { get; set; }
 
     [Display(Name = "Consider skills")]
     public bool ConsiderSkills { get; set; }
@@ -81,13 +82,16 @@ public partial class User : IdentityUser<int>
     public Name? Name { get; set; }
     public Ibu? Ibu { get; set; }
     public ContactDetail? ContactDetail { get; set; }
+    public User? ManagerUser { get; set; }
     public Year? Year { get; set; }
+    public virtual ICollection<User> DirectReports { get; set; } = [];
     public virtual ICollection<UserRole> UserRole { get; set; } = [];
     public virtual ICollection<BudgetNum> BudgetNums { get; set; } = [];
     public virtual ICollection<Event> Events { get; set; } = [];
     public virtual ICollection<Ibu> Ibus { get; set; } = [];
     public virtual ICollection<OrdNum> OrdNums { get; set; } = [];
     public virtual ICollection<LoginLog> Logins { get; set; } = [];
+    public virtual ICollection<UserSession> Sessions { get; set; } = [];
     public virtual ICollection<SnagList> CreatedSnagLists { get; set; } = [];
     public virtual ICollection<AppImage> UploadedImages { get; set; } = [];
     public virtual ICollection<DiseaseTrainingExample> SubmittedDiseaseTrainingExamples { get; set; } = [];
@@ -96,4 +100,6 @@ public partial class User : IdentityUser<int>
     public virtual ICollection<FieldProcurementSetting> ManagedFieldProcurementSettings { get; set; } = [];
     public virtual ICollection<PurchaseRequisition> RequestedPurchaseRequisitions { get; set; } = [];
     public virtual ICollection<PurchaseRequisition> ManagedPurchaseRequisitions { get; set; } = [];
+    public virtual ICollection<UserTemporaryReplacement> TemporaryReplacementsForAbsence { get; set; } = [];
+    public virtual ICollection<UserTemporaryReplacement> TemporaryReplacementAssignments { get; set; } = [];
 }

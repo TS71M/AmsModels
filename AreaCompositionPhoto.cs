@@ -2,6 +2,7 @@ namespace AmsModels;
 
 [Index(nameof(PubId), IsUnique = true)]
 [Index(nameof(AreaId))]
+[Index(nameof(SurfaceId))]
 [Index(nameof(ImageId), IsUnique = true)]
 public class AreaCompositionPhoto
 {
@@ -23,11 +24,16 @@ public class AreaCompositionPhoto
     [Required]
     public int AreaId { get; set; }
 
+    public int? SurfaceId { get; set; }
+
     [Required]
     public int ImageId { get; set; }
 
     [ForeignKey(nameof(AreaId))]
     public Area Area { get; set; } = default!;
+
+    [ForeignKey(nameof(SurfaceId))]
+    public Surface? Surface { get; set; }
 
     [ForeignKey(nameof(ImageId))]
     public AppImage AppImage { get; set; } = default!;

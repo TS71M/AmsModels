@@ -31,6 +31,9 @@ public class SnagList
     public int Priority { get; set; }
     public bool Completed { get; set; }
     public DateTime? CompletionDate { get; set; } = null;
+    [MaxLength(500)]
+    public string? CompletionRemarks { get; set; }
+    public int? CompletionDurationMinutes { get; set; }
     public DateTime? AcceptDate { get; set; }
 
     [ForeignKey(nameof(SnagCompletedImg))]
@@ -60,4 +63,4 @@ public class SnagList
     public required Hole Hole { get; set; }
     public Staff? Staff { get; set; }
     public required User User { get; set; }
-}
+}

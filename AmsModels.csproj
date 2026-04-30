@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net10.0;net10.0-ios</TargetFrameworks>
+		<TargetFrameworks>net10.0</TargetFrameworks>
+		<TargetFrameworks Condition="!$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net10.0-ios</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
@@ -13,7 +14,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Lib\Lib.csproj" />
+		<ProjectReference Include="..\Lib\Lib.csproj" SetTargetFramework="TargetFramework=net10.0" UndefineProperties="RuntimeIdentifier;SelfContained" />
 	</ItemGroup>
 
 </Project>

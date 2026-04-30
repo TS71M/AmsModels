@@ -6,9 +6,4 @@
     <Import Project="$(NuGetPackageRoot)microsoft.extensions.logging.abstractions\10.0.7\buildTransitive\net8.0\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.logging.abstractions\10.0.7\buildTransitive\net8.0\Microsoft.Extensions.Logging.Abstractions.targets')" />
     <Import Project="$(NuGetPackageRoot)magick.net-q16-anycpu\14.13.0\buildTransitive\netstandard20\Magick.NET-Q16-AnyCPU.targets" Condition="Exists('$(NuGetPackageRoot)magick.net-q16-anycpu\14.13.0\buildTransitive\netstandard20\Magick.NET-Q16-AnyCPU.targets')" />
   </ImportGroup>
-  <ImportGroup Condition=" '$(TargetFramework)' == 'net10.0-ios' AND '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.extensions.options\10.0.7\buildTransitive\net8.0\Microsoft.Extensions.Options.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.options\10.0.7\buildTransitive\net8.0\Microsoft.Extensions.Options.targets')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.extensions.configuration.binder\10.0.7\buildTransitive\netstandard2.0\Microsoft.Extensions.Configuration.Binder.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.configuration.binder\10.0.7\buildTransitive\netstandard2.0\Microsoft.Extensions.Configuration.Binder.targets')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.extensions.logging.abstractions\10.0.7\buildTransitive\net8.0\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.logging.abstractions\10.0.7\buildTransitive\net8.0\Microsoft.Extensions.Logging.Abstractions.targets')" />
-  </ImportGroup>
 </Project>

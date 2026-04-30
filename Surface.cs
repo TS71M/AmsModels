@@ -29,6 +29,7 @@ public partial class Surface
 
     public virtual ICollection<AgrTaskHole> AgrTaskHoles { get; set; } = [];
     public virtual ICollection<AgrTaskWeekHole> AgrTaskWeekHoles { get; set; } = [];
+    public virtual ICollection<AreaCompositionPhoto> AreaCompositionPhotos { get; set; } = [];
     public virtual ICollection<SoilTest> SoilTests { get; set; } = [];
     public virtual ICollection<TaskWorkHole> TaskWorkHoles { get; set; } = [];
-}
+}

@@ -1,5 +1,0 @@
-C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\.codex-tmp\obj-webapp-climatezones\AmsModels.csproj.AssemblyReference.cache
-C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\.codex-tmp\obj-webapp-climatezones\AmsModels.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\.codex-tmp\obj-webapp-climatezones\AmsModels.AssemblyInfoInputs.cache
-C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\.codex-tmp\obj-webapp-climatezones\AmsModels.AssemblyInfo.cs
-C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\.codex-tmp\obj-webapp-climatezones\AmsModels.csproj.CoreCompileInputs.cache
