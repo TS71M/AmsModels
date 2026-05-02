@@ -18,7 +18,8 @@ public partial class AppImage
     public string ImageName { get; set; } = "";
 
     public string RelativePath { get; set; } = "";
-    public byte[] ImageFile { get; set; } = [];
+    [NotMapped]
+    public byte[]? ImageFile { get; set; }
     public DateTime UploadDate { get; set; }
     public int ImageSize { get; set; }
     public int UploadedById { get; set; }

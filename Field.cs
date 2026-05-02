@@ -200,6 +200,8 @@ public class Field
     public virtual ICollection<WeatherObservation> WeatherObservations { get; set; } = [];
     public virtual ICollection<WeatherForecastHour> WeatherForecastHours { get; set; } = [];
     public virtual ICollection<FieldZone> FieldZones { get; set; } = [];
+    public virtual SatelliteStressMonitoringSetting? SatelliteStressMonitoringSetting { get; set; }
+    public virtual ICollection<SatelliteStressScanRun> SatelliteStressScanRuns { get; set; } = [];
     public ICollection<FieldWeedTimingOverride> FieldWeedTimingOverrides { get; set; } = [];
     public FieldProcurementSetting? ProcurementSetting { get; set; }
     public virtual ICollection<PurchaseRequisition> PurchaseRequisitions { get; set; } = [];

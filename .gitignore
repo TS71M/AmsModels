@@ -1,2 +1,4 @@
 # Codex scratch workspaces
 .codex-tmp/
+**/.codex-tmp/
+../.codex-build/
