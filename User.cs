@@ -92,6 +92,7 @@ public partial class User : IdentityUser<int>
     public virtual ICollection<OrdNum> OrdNums { get; set; } = [];
     public virtual ICollection<LoginLog> Logins { get; set; } = [];
     public virtual ICollection<MobileBugReport> MobileBugReports { get; set; } = [];
+    public virtual ICollection<AssistantConversationLog> AssistantConversationLogs { get; set; } = [];
     public virtual ICollection<UserSession> Sessions { get; set; } = [];
     public virtual ICollection<SnagList> CreatedSnagLists { get; set; } = [];
     public virtual ICollection<AppImage> UploadedImages { get; set; } = [];
