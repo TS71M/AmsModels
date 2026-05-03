@@ -309,3 +309,6 @@ C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\.codex-build\verify-api\A
 C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\.codex-build\verify-webapp\AmsModels.deps.json
 C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\.codex-build\verify-webapp\AmsModels.dll
 C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\.codex-build\verify-webapp\AmsModels.pdb
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\WebApp\bin\_codex_verify_whatsnew\AmsModels.deps.json
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\WebApp\bin\_codex_verify_whatsnew\AmsModels.dll
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\WebApp\bin\_codex_verify_whatsnew\AmsModels.pdb
