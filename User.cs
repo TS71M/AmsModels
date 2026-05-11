@@ -45,12 +45,14 @@ public partial class User : IdentityUser<int>
     public bool ShowProgress { get; set; }
     public int? ContactDetailsId { get; set; }
     public int? ManagerUserId { get; set; }
+    public int? UserPositionId { get; set; }
+    public int? AccessProfileId { get; set; }
 
     [Display(Name = "Consider skills")]
     public bool ConsiderSkills { get; set; }
 
-    [Display(Name = "Staff randomly")]
-    public bool StaffRndm { get; set; }
+    [Display(Name = "Randomize assignments")]
+    public bool RandomizeAssignments { get; set; }
     public int? NameId { get; set; }
 
     public int? ImageId { get; set; }
@@ -83,8 +85,15 @@ public partial class User : IdentityUser<int>
     public Ibu? Ibu { get; set; }
     public ContactDetail? ContactDetail { get; set; }
     public User? ManagerUser { get; set; }
+    public UserPosition? UserPosition { get; set; }
+    public IbuAccessProfile? AccessProfile { get; set; }
     public Year? Year { get; set; }
     public virtual ICollection<User> DirectReports { get; set; } = [];
+    public virtual ICollection<Incentive> Incentives { get; set; } = [];
+    public virtual ICollection<ManagerOnDuty> ManagersOnDuty { get; set; } = [];
+    public virtual ICollection<ShiftPlanner> ShiftPlanners { get; set; } = [];
+    public virtual ICollection<Skill> Skillss { get; set; } = [];
+    public virtual ICollection<TaskWork> TaskWorks { get; set; } = [];
     public virtual ICollection<UserRole> UserRole { get; set; } = [];
     public virtual ICollection<BudgetNum> BudgetNums { get; set; } = [];
     public virtual ICollection<Event> Events { get; set; } = [];
@@ -94,7 +103,13 @@ public partial class User : IdentityUser<int>
     public virtual ICollection<MobileBugReport> MobileBugReports { get; set; } = [];
     public virtual ICollection<AssistantConversationLog> AssistantConversationLogs { get; set; } = [];
     public virtual ICollection<UserSession> Sessions { get; set; } = [];
+    public virtual ICollection<WorkConversationParticipant> WorkConversationParticipants { get; set; } = [];
+    public virtual ICollection<WorkMessage> WorkMessages { get; set; } = [];
+    [InverseProperty(nameof(SnagList.User))]
     public virtual ICollection<SnagList> CreatedSnagLists { get; set; } = [];
+
+    [InverseProperty(nameof(SnagList.AssignedUser))]
+    public virtual ICollection<SnagList> AssignedSnagLists { get; set; } = [];
     public virtual ICollection<AppImage> UploadedImages { get; set; } = [];
     public virtual ICollection<DiseaseTrainingExample> SubmittedDiseaseTrainingExamples { get; set; } = [];
     public virtual ICollection<DiseaseTrainingExample> ReviewedDiseaseTrainingExamples { get; set; } = [];
@@ -104,4 +119,5 @@ public partial class User : IdentityUser<int>
     public virtual ICollection<PurchaseRequisition> ManagedPurchaseRequisitions { get; set; } = [];
     public virtual ICollection<UserTemporaryReplacement> TemporaryReplacementsForAbsence { get; set; } = [];
     public virtual ICollection<UserTemporaryReplacement> TemporaryReplacementAssignments { get; set; } = [];
+    public virtual ICollection<UserPermissionOverride> PermissionOverrides { get; set; } = [];
 }

@@ -7,7 +7,8 @@ public class Department
 
     [Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public Guid PubId { get; set; }
-    public int FieldId { get; set; }
+    public int IbuId { get; set; }
+    public int? FieldId { get; set; }
 
     [MaxLength(45)]
     public string DepartmentName { get; set; } = "";
@@ -15,9 +16,10 @@ public class Department
     [MaxLength(500)]
     public string Description { get; set; } = "";
 
-    public required Field Field { get; set; }
+    public required Ibu Ibu { get; set; }
+    public Field? Field { get; set; }
 
-    public virtual ICollection<StaPos> StaPoses { get; set; } = [];
+    public virtual ICollection<UserPosition> UserPositions { get; set; } = [];
     public virtual ICollection<User> Users { get; set; } = [];
 
-}
+}

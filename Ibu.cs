@@ -51,7 +51,10 @@ public partial class Ibu
     public virtual ICollection<Event> Events { get; set; } = [];
     public virtual ICollection<Field> Fields { get; set; } = [];
     public virtual ICollection<GeneralRemark> GeneralRemarks { get; set; } = [];
+    public virtual ICollection<Department> Departments { get; set; } = [];
+    public virtual ICollection<IbuAccessProfile> AccessProfiles { get; set; } = [];
     public virtual ICollection<IbuYearActive> IbuYearActives { get; set; } = [];
+    public virtual ICollection<IbuModuleSetting> ModuleSettings { get; set; } = [];
     public virtual ICollection<IbuRelationship> ManagedClientRelationships { get; set; } = [];
     public virtual ICollection<IbuRelationship> ManagerRelationships { get; set; } = [];
     public virtual ICollection<IbuClaimRequest> ClaimRequests { get; set; } = [];

@@ -35,6 +35,8 @@ public partial class AppImage
     public ICollection<AreaCompositionPhoto> AreaCompositionPhotos { get; set; } = [];
     public ICollection<DiseasePicture> DiseasePictures { get; set; } = [];
     public ICollection<DiseaseTrainingExample> DiseaseTrainingExamples { get; set; } = [];
+    public ICollection<MobileBugReport> MobileBugReportScreenshots { get; set; } = [];
+    public ICollection<WorkMessage> WorkMessages { get; set; } = [];
 
     public ICollection<GrassSpeciesPic> GrassSpeciesPics { get; set; } = [];
 }

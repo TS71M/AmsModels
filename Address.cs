@@ -9,7 +9,6 @@ public enum ParentEntityType
     DoG,
     Field,
     Supplier,
-    Staff,
     User
 }
 

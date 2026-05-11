@@ -46,6 +46,9 @@ public sealed class WeatherDiaryRule
     [MaxLength(32)]
     public string? RelatedRiskKey { get; set; }
 
+    [Required]
+    public int MinimumDurationDays { get; set; } = 1;
+
     public int? ClimateZoneId { get; set; }
 
     public int SortOrder { get; set; }

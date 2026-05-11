@@ -12,7 +12,8 @@ public class SnagList
     public int FieldId { get; set; }
     public int AreaId { get; set; }
     public int HoleId { get; set; }
-    public int? StaffId { get; set; }
+    [ForeignKey(nameof(AssignedUser))]
+    public int? AssignedUserId { get; set; }
 
     [ForeignKey(nameof(User))]
     public int CreatedById { get; set; }
@@ -40,7 +41,7 @@ public class SnagList
     public int? CompletedImageId { get; set; }
 
     public virtual string CreatedByName => User.Name?.FullName ?? "-";
-    public virtual string AssignedTo => Staff?.FullName ?? "not yet assigned";
+    public virtual string AssignedTo => AssignedUser?.FullNameSnapshot ?? AssignedUser?.UserName ?? "not yet assigned";
     public virtual string AreaHole => $"{Area.AreaName} {Hole.HolShoNam}";
     public virtual TimeSpan? ReactionTime => AcceptDate.HasValue ? AcceptDate.Value - SnagDate : null;
     public virtual TimeSpan? SolvingTime => CompletionDate.HasValue ? CompletionDate.Value - SnagDate : null;
@@ -61,6 +62,6 @@ public class SnagList
     public required Area Area { get; set; }
     public required Field Field { get; set; }
     public required Hole Hole { get; set; }
-    public Staff? Staff { get; set; }
+    public User? AssignedUser { get; set; }
     public required User User { get; set; }
 }

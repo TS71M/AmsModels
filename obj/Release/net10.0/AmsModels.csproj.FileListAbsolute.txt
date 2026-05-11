@@ -16,3 +16,9 @@ C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\obj\Release\net10.
 C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\codex-scratch\webapp-release-gateRelease\net10.0\AmsModels.deps.json
 C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\codex-scratch\webapp-release-gateRelease\net10.0\AmsModels.dll
 C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\codex-scratch\webapp-release-gateRelease\net10.0\AmsModels.pdb
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\.codex-build\webapp-diary-timeline-release\AmsModels.deps.json
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\.codex-build\webapp-diary-timeline-release\AmsModels.dll
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\.codex-build\webapp-diary-timeline-release\AmsModels.pdb
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\.codex-build\webapp-diary-timeline-release2\AmsModels.deps.json
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\.codex-build\webapp-diary-timeline-release2\AmsModels.dll
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\.codex-build\webapp-diary-timeline-release2\AmsModels.pdb

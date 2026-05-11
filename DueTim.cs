@@ -7,5 +7,4 @@ public partial class DueTim
     public string DueTimName { get; set; } = "";
 
     public virtual ICollection<Incentive> Incentives { get; set; } = [];
-    public virtual ICollection<StaPay> StaPays { get; set; } = [];
-}
+}

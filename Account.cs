@@ -27,5 +27,4 @@ public partial class Account
     public virtual ICollection<Product> Products { get; set; } = [];
     public virtual ICollection<Expense> Expenses { get; set; } = [];
     public virtual ICollection<Budget> Budgets { get; set; } = [];
-    public virtual ICollection<StaffPlanner> StaPlas { get; set; } = [];
-}
+}

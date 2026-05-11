@@ -13,6 +13,5 @@ public partial class Month
 
     public virtual ICollection<Expense> Expenses { get; set; } = [];
     public virtual ICollection<ShiftPlanner> ShiftPlanners { get; set; } = [];
-    public virtual ICollection<StaffPlannerMonth> StaPlaMonths { get; set; } = [];
 
-}
+}

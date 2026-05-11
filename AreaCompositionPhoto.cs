@@ -3,6 +3,7 @@ namespace AmsModels;
 [Index(nameof(PubId), IsUnique = true)]
 [Index(nameof(AreaId))]
 [Index(nameof(SurfaceId))]
+[Index(nameof(SurfaceCompositionTransmissionId))]
 [Index(nameof(ImageId), IsUnique = true)]
 public class AreaCompositionPhoto
 {
@@ -26,6 +27,10 @@ public class AreaCompositionPhoto
 
     public int? SurfaceId { get; set; }
 
+    public int? SurfaceCompositionTransmissionId { get; set; }
+
+    public DateTime? TransmittedAtUtc { get; set; }
+
     [Required]
     public int ImageId { get; set; }
 
@@ -34,6 +39,9 @@ public class AreaCompositionPhoto
 
     [ForeignKey(nameof(SurfaceId))]
     public Surface? Surface { get; set; }
+
+    [ForeignKey(nameof(SurfaceCompositionTransmissionId))]
+    public SurfaceCompositionTransmission? SurfaceCompositionTransmission { get; set; }
 
     [ForeignKey(nameof(ImageId))]
     public AppImage AppImage { get; set; } = default!;

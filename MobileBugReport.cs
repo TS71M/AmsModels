@@ -1,5 +1,7 @@
 namespace AmsModels;
 
+using Lib.Enums;
+
 [Index(nameof(PubId), IsUnique = true)]
 [Index(nameof(Status), nameof(SubmittedUtc))]
 [Index(nameof(IbuId), nameof(SubmittedUtc))]
@@ -20,8 +22,7 @@ public sealed class MobileBugReport
 
     public DateTime SubmittedUtc { get; set; }
 
-    [Required, MaxLength(40)]
-    public string Status { get; set; } = "New";
+    public MobileBugReportStatus Status { get; set; } = MobileBugReportStatus.New;
 
     [Required, MaxLength(200)]
     public string Title { get; set; } = "";
@@ -65,7 +66,8 @@ public sealed class MobileBugReport
     [MaxLength(80)]
     public string? ScreenshotContentType { get; set; }
 
-    public byte[]? ScreenshotBytes { get; set; }
+    public int? ScreenshotImageId { get; set; }
+    public AppImage? ScreenshotImage { get; set; }
 
     public bool EmailSent { get; set; }
     public DateTime? EmailSentUtc { get; set; }

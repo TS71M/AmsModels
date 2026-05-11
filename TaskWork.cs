@@ -8,7 +8,7 @@ public partial class TaskWork
     public int TaskWorkId { get; set; }
     public int Task { get; set; }
     public int GlobalId { get; set; }
-    public int StaffId { get; set; }
+    public int UserId { get; set; }
     public int AgrTaskWeekId { get; set; }
     public int JobN { get; set; }
     public TimeSpan StartTime { get; set; }
@@ -36,10 +36,10 @@ public partial class TaskWork
     public virtual string ExecutedTimeH => $"{ExecutedTime.TotalHours:N1}h";
 
     public required AgrTaskWeek AgrTaskWeek { get; set; }
-    public required Staff Staff { get; set; }
+    public required User User { get; set; }
     public required TaskGlobal TaskGlobal { get; set; }
 
     public virtual ICollection<TaskExecutionLog> TaskExecutionLogs { get; set; } = [];
     public virtual ICollection<TaskWorkHole> TaskWorkHoles { get; set; } = [];
     public virtual ICollection<TaskWorkMachine> TaskWorkMachines { get; set; } = [];
-}
+}

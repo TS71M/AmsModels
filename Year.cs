@@ -30,6 +30,5 @@ public partial class Year
     public virtual ICollection<PlanningVersion> PlanningVersions { get; set; } = [];
     public virtual ICollection<PriInqNum> PriInqNums { get; set; } = [];
     public virtual ICollection<ShiftPlanner> ShiftPlanners { get; set; } = [];
-    public virtual ICollection<StaffPlanner> StaPlas { get; set; } = [];
 
-}
+}

@@ -9,6 +9,5 @@ public partial class Payroll
     public string PayDes { get; set; } = "";
 
     public virtual ICollection<Incentive> Incentives { get; set; } = [];
-    public virtual ICollection<StaPay> StaPays { get; set; } = [];
-    public virtual ICollection<StaPos> StaPoss { get; set; } = [];
-}
+    public virtual ICollection<UserPosition> UserPositions { get; set; } = [];
+}
