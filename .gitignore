@@ -1,4 +1,10 @@
 # Codex scratch workspaces
 .codex-tmp/
 **/.codex-tmp/
+.codex-build/
+.codex-obj/
 ../.codex-build/
+
+# Build results
+[Bb]in/
+[Oo]bj/

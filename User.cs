@@ -58,6 +58,7 @@ public partial class User : IdentityUser<int>
     public int? ImageId { get; set; }
     public string? RefreshToken { get; set; }
     public DateTime? RefreshTokenExpiry { get; set; }
+    public DateTime? LastSeenUtc { get; set; }
 
     [MaxLength(250)]
     public string IbuNameSnapshot { get; set; } = "";
@@ -103,6 +104,7 @@ public partial class User : IdentityUser<int>
     public virtual ICollection<MobileBugReport> MobileBugReports { get; set; } = [];
     public virtual ICollection<AssistantConversationLog> AssistantConversationLogs { get; set; } = [];
     public virtual ICollection<UserSession> Sessions { get; set; } = [];
+    public virtual ICollection<PushDevice> PushDevices { get; set; } = [];
     public virtual ICollection<WorkConversationParticipant> WorkConversationParticipants { get; set; } = [];
     public virtual ICollection<WorkMessage> WorkMessages { get; set; } = [];
     [InverseProperty(nameof(SnagList.User))]

@@ -12,7 +12,7 @@ public sealed class WorkMessage
     public int SenderUserId { get; set; }
     public int? AppImageId { get; set; }
 
-    [Required, MaxLength(2000)]
+    [Required]
     public string Body { get; set; } = "";
 
     public DateTime CreatedUtc { get; set; } = DateTime.UtcNow;
