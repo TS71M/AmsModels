@@ -1035,3 +1035,15 @@ C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\.codex-build\WebAp
 C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\.codex-build\WebApp-realtime-diagnostics\AmsModels.pdb
 C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\.codex-build\WebApp-realtime-diagnostics\Lib.dll
 C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\.codex-build\WebApp-realtime-diagnostics\Lib.pdb
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\artifacts\verify-webapp\AmsModels.deps.json
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\artifacts\verify-webapp\AmsModels.dll
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\artifacts\verify-webapp\AmsModels.pdb
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\artifacts\verify-webapp\Lib.dll
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\artifacts\verify-webapp\Lib.pdb
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\.codex-build\webapp-learning-feature-sweep-check\AmsModels.deps.json
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\.codex-build\webapp-learning-feature-sweep-check\AmsModels.dll
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\.codex-build\webapp-learning-feature-sweep-check\AmsModels.pdb
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\artifacts\buildcheck\WebApp\AmsModels.deps.json
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\artifacts\buildcheck\WebApp\AmsModels.dll
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\artifacts\buildcheck\WebApp\AmsModels.pdb
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\obj\Debug\net10.0\AmsModels.sourcelink.json
