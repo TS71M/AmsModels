@@ -22,3 +22,4 @@ C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\obj\Release\net10.
 C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\obj\Release\net10.0\refint\AmsModels.dll
 C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\obj\Release\net10.0\AmsModels.pdb
 C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\obj\Release\net10.0\ref\AmsModels.dll
+C:\Users\TomSe\Visual Studio\Projects\Agronomy Manager\Models\obj\Release\net10.0\AmsModels.sourcelink.json

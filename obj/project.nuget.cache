@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "L9fZ3rmIGdU=",
+  "dgSpecHash": "ZkIir1cqC8U=",
   "success": true,
   "projectFilePath": "C:\\Users\\TomSe\\Visual Studio\\Projects\\Agronomy Manager\\Models\\AmsModels.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\TomSe\\.nuget\\packages\\magick.net-q16-anycpu\\14.13.0\\magick.net-q16-anycpu.14.13.0.nupkg.sha512",
-    "C:\\Users\\TomSe\\.nuget\\packages\\magick.net.core\\14.13.0\\magick.net.core.14.13.0.nupkg.sha512",
+    "C:\\Users\\TomSe\\.nuget\\packages\\magick.net-q16-anycpu\\14.13.1\\magick.net-q16-anycpu.14.13.1.nupkg.sha512",
+    "C:\\Users\\TomSe\\.nuget\\packages\\magick.net.core\\14.13.1\\magick.net.core.14.13.1.nupkg.sha512",
     "C:\\Users\\TomSe\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\10.0.8\\microsoft.aspnetcore.cryptography.internal.10.0.8.nupkg.sha512",
     "C:\\Users\\TomSe\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\10.0.8\\microsoft.aspnetcore.cryptography.keyderivation.10.0.8.nupkg.sha512",
     "C:\\Users\\TomSe\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.8\\microsoft.entityframeworkcore.10.0.8.nupkg.sha512",

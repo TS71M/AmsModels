@@ -4,6 +4,7 @@ namespace AmsModels;
 [Index(nameof(UserId))]
 [Index(nameof(IbuId))]
 [Index(nameof(OccuredUtc))]
+[Index(nameof(AttemptedUserNameHash))]
 public class LoginLog(
     int? ibuId,
     int? userId,
@@ -25,6 +26,12 @@ public class LoginLog(
     [MaxLength(32)]
     public string? FailureCode { get; set; }
 
+    [MaxLength(160)]
+    public string? AttemptedUserNameMasked { get; set; }
+
+    [MaxLength(64)]
+    public string? AttemptedUserNameHash { get; set; }
+
     [MaxLength(45)]
     public string? IpAddress { get; set; }
 
@@ -33,4 +40,4 @@ public class LoginLog(
 
     public Ibu? Ibu { get; set; }
     public User? User { get; set; }
-}
+}
