@@ -41,6 +41,22 @@ public class SurfaceCompositionTransmission
 
     public int PhotoCount { get; set; }
 
+    [Required, MaxLength(32)]
+    public string RerunStatus { get; set; } = "not_checked";
+
+    public DateTime? RerunLastCheckedAtUtc { get; set; }
+
+    [MaxLength(80)]
+    public string? RerunLastModelUsed { get; set; }
+
+    [Precision(5, 4)]
+    public decimal? RerunLastConfidence { get; set; }
+
+    public DateTime? RerunDecisionAtUtc { get; set; }
+
+    [MaxLength(1000)]
+    public string? RerunReviewNote { get; set; }
+
     [ForeignKey(nameof(SurfaceId))]
     public Surface Surface { get; set; } = default!;
 
