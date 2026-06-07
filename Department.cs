@@ -20,6 +20,5 @@ public class Department
     public Field? Field { get; set; }
 
     public virtual ICollection<UserPosition> UserPositions { get; set; } = [];
-    public virtual ICollection<User> Users { get; set; } = [];
 
 }

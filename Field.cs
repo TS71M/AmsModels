@@ -20,6 +20,7 @@ public class Field
     public int? JurisdictionId { get; set; }
     public int? ClimateZoneId { get; set; }
     public int? PrimaryRiskAreaId { get; set; }
+    public int? GrowthPotentialAreaId { get; set; }
 
     [Required, MaxLength(100)]
     public string FieldName { get; set; } = "";
@@ -177,6 +178,9 @@ public class Field
     public ClimateZone? ClimateZone { get; set; }
     [ForeignKey(nameof(PrimaryRiskAreaId))]
     public Area? PrimaryRiskArea { get; set; }
+
+    [ForeignKey(nameof(GrowthPotentialAreaId))]
+    public Area? GrowthPotentialArea { get; set; }
 
     public virtual ICollection<Area> Areas { get; set; } = [];
     public virtual ICollection<BudgetNum> BudgetNums { get; set; } = [];

@@ -26,44 +26,17 @@ public partial class User : IdentityUser<int>
     public override string? UserName { get => base.UserName; set => base.UserName = value; }
     public int IbuId { get; set; }
     public bool Active { get; set; } = true;
-    public bool ThisWeek { get; set; }
-    public bool NextWeek { get; set; }
-    public bool Irrigation { get; set; }
-    public bool Stock { get; set; }
-    public bool Today { get; set; }
-    public bool History { get; set; }
-    public int Tolerance { get; set; } = 0;
-    public int WkOfWarn { get; set; } = 4;
-    public bool MaskCompTasks { get; set; }
-    public int? PlanningYearId { get; set; }
-    public int LoadYears { get; set; } = 3;
-    public bool ConsiderMlsn { get; set; }
-    public bool CheckApps { get; set; }
-    public bool CheckOrders { get; set; }
-    public bool CheckEt { get; set; }
-    public bool ShowLastDays { get; set; }
-    public bool ShowProgress { get; set; }
     public int? ContactDetailsId { get; set; }
     public int? ManagerUserId { get; set; }
     public int? UserPositionId { get; set; }
     public int? AccessProfileId { get; set; }
-
-    [Display(Name = "Consider skills")]
-    public bool ConsiderSkills { get; set; }
-
-    [Display(Name = "Randomize assignments")]
-    public bool RandomizeAssignments { get; set; }
     public int? NameId { get; set; }
 
     public int? ImageId { get; set; }
-    public string? RefreshToken { get; set; }
-    public DateTime? RefreshTokenExpiry { get; set; }
     public DateTime? LastSeenUtc { get; set; }
 
     [MaxLength(250)]
     public string IbuNameSnapshot { get; set; } = "";
-
-    public Guid IbuPubIdSnapshot { get; set; }
 
     [MaxLength(250)]
     public string FullNameSnapshot { get; set; } = "";
@@ -88,7 +61,6 @@ public partial class User : IdentityUser<int>
     public User? ManagerUser { get; set; }
     public UserPosition? UserPosition { get; set; }
     public IbuAccessProfile? AccessProfile { get; set; }
-    public Year? Year { get; set; }
     public virtual ICollection<User> DirectReports { get; set; } = [];
     public virtual ICollection<Incentive> Incentives { get; set; } = [];
     public virtual ICollection<ManagerOnDuty> ManagersOnDuty { get; set; } = [];

@@ -23,6 +23,11 @@ public partial class AppImage
     public DateTime UploadDate { get; set; }
     public int ImageSize { get; set; }
     public int UploadedById { get; set; }
+    public DateTime? CapturedAtUtc { get; set; }
+    public decimal? CaptureLatitude { get; set; }
+    public decimal? CaptureLongitude { get; set; }
+    public decimal? CaptureLocationAccuracyMeters { get; set; }
+    public string? CaptureMetadataSource { get; set; }
 
     [NotMapped]
     public bool IsGlobal => IbuId == null;

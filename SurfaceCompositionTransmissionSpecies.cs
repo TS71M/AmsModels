@@ -17,6 +17,8 @@ public class SurfaceCompositionTransmissionSpecies
 
     public int? GrassSpeciesId { get; set; }
 
+    public int? GrassSpeciesChartGroupId { get; set; }
+
     [Required, MaxLength(250)]
     public string Name { get; set; } = "";
 
@@ -29,9 +31,23 @@ public class SurfaceCompositionTransmissionSpecies
     [MaxLength(1000)]
     public string? Notes { get; set; }
 
+    [MaxLength(80)]
+    public string? ChartGroupKey { get; set; }
+
+    [MaxLength(120)]
+    public string? ChartGroupName { get; set; }
+
+    [MaxLength(40)]
+    public string? TaxonRank { get; set; }
+
+    public bool IsChartable { get; set; } = true;
+
     [ForeignKey(nameof(SurfaceCompositionTransmissionId))]
     public SurfaceCompositionTransmission Transmission { get; set; } = default!;
 
     [ForeignKey(nameof(GrassSpeciesId))]
     public GrassSpecies? GrassSpecies { get; set; }
+
+    [ForeignKey(nameof(GrassSpeciesChartGroupId))]
+    public GrassSpeciesChartGroup? ChartGroup { get; set; }
 }

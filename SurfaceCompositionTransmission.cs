@@ -57,6 +57,8 @@ public class SurfaceCompositionTransmission
     [MaxLength(1000)]
     public string? RerunReviewNote { get; set; }
 
+    public string? RerunResultJson { get; set; }
+
     [ForeignKey(nameof(SurfaceId))]
     public Surface Surface { get; set; } = default!;
 
