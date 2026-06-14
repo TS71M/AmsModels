@@ -91,6 +91,7 @@ public partial class User : IdentityUser<int>
     public virtual ICollection<DiseaseTrainingExample> ReviewedDiseaseTrainingExamples { get; set; } = [];
     public virtual ICollection<UserFieldPermission> UserFieldPermissions { get; set; } = [];
     public virtual ICollection<FieldProcurementSetting> ManagedFieldProcurementSettings { get; set; } = [];
+    public virtual ICollection<ProcurementHubMember> ProcurementHubMemberships { get; set; } = [];
     public virtual ICollection<PurchaseRequisition> RequestedPurchaseRequisitions { get; set; } = [];
     public virtual ICollection<PurchaseRequisition> ManagedPurchaseRequisitions { get; set; } = [];
     public virtual ICollection<UserTemporaryReplacement> TemporaryReplacementsForAbsence { get; set; } = [];

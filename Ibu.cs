@@ -44,6 +44,7 @@ public partial class Ibu
     public Unit? VisualizationTempUnit { get; set; }
     public Unit? VisualizationRainUnit { get; set; }
     public Unit? VisualizationWindUnit { get; set; }
+    public ProcurementHubSetting? ProcurementHubSetting { get; set; }
 
     public virtual ICollection<Address> Addresses { get; set; } = [];
     public virtual ICollection<AppImage> AppImages { get; set; } = [];
@@ -65,6 +66,7 @@ public partial class Ibu
     public virtual ICollection<AssistantConversationLog> AssistantConversationLogs { get; set; } = [];
     public virtual ICollection<Name> Names { get; set; } = [];
     public virtual ICollection<Product> Products { get; set; } = [];
+    public virtual ICollection<FieldProcurementSetting> RoutedFieldProcurementHubSettings { get; set; } = [];
     public virtual ICollection<PurchaseRequisition> PurchaseRequisitions { get; set; } = [];
     public virtual ICollection<Supplier> Suppliers { get; set; } = [];
     public virtual ICollection<User> Users { get; set; } = [];
