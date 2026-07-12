@@ -62,6 +62,7 @@ public partial class Ibu
     public virtual ICollection<LicenseHistory> LicenseHistories { get; set; } = [];
     public virtual ICollection<LicenseIbu> LicenseIbus { get; set; } = [];
     public virtual ICollection<LoginLog> Logins { get; set; } = [];
+    public virtual ICollection<UserPageVisit> PageVisits { get; set; } = [];
     public virtual ICollection<MobileBugReport> MobileBugReports { get; set; } = [];
     public virtual ICollection<AssistantConversationLog> AssistantConversationLogs { get; set; } = [];
     public virtual ICollection<Name> Names { get; set; } = [];
