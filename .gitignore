@@ -8,3 +8,5 @@
 # Build results
 [Bb]in/
 [Oo]bj/
+.artifacts/
+.codex-artifacts/
