@@ -56,33 +56,6 @@ public class Field
     [Range(0, 100)]
     public int Tolerance { get; set; }
 
-    [ForeignKey(nameof(SurfaceUni))]
-    public int? SurfaceUniId { get; set; }
-
-    [ForeignKey(nameof(TotalSurfaceUni))]
-    public int? TotalSurfaceUniId { get; set; }
-
-    [ForeignKey(nameof(CutUniLen))]
-    public int? CutUniLenId { get; set; }
-
-    [ForeignKey(nameof(GreenSpeedUniLen))]
-    public int? GreenSpeedUniLenId { get; set; }
-
-    [ForeignKey(nameof(TempUni))]
-    public int? TempUniId { get; set; }
-
-    [ForeignKey(nameof(RainUni))]
-    public int? RainUniId { get; set; }
-
-    [ForeignKey(nameof(ClippingsUni))]
-    public int? ClippingsUniId { get; set; }
-
-    [ForeignKey(nameof(WindUni))]
-    public int? WindUniId { get; set; }
-
-    [ForeignKey(nameof(ElevationUniLen))]
-    public int? ElevationUniLenId { get; set; }
-
     public bool StartInventory { get; set; } = false;
     public bool UsePlanning { get; set; } = true;
     public bool EnterWeatherManually { get; set; } = true;
@@ -114,16 +87,14 @@ public class Field
     {
         get
         {
-            var u = ElevationUniLen?.UnitShort;
-            return string.IsNullOrWhiteSpace(u) ? $"{Elevation}" : $"{Elevation} {u}";
+            return $"{Elevation} m";
         }
     }
     public virtual string TotalSurfaceTxt
     {
         get
         {
-            var u = TotalSurfaceUni?.UnitShort;
-            return string.IsNullOrWhiteSpace(u) ? $"{TotalSurface}" : $"{TotalSurface} {u}";
+            return $"{TotalSurface} m²";
         }
     }
     public virtual string FieldAddress
@@ -141,15 +112,6 @@ public class Field
         }
     }
 
-    public virtual string TemperatureUnit => TempUni?.UnitShort ?? "No Temperature Unit selected yet";
-    public virtual string RainUnit => RainUni?.UnitShort ?? "No Rain Unit selected yet";
-    public virtual string WindSpeedUnit => WindUni?.UnitShort ?? "No Speed Unit selected yet";
-    public virtual string GreenSpeedUnit => GreenSpeedUniLen?.UnitShort ?? "No Speed Unit selected yet";
-    public virtual string ClippingsUnit => ClippingsUni?.UnitShort ?? "No Clippings Unit selected yet";
-    public virtual string CuttingsUnit => CutUniLen?.UnitShort ?? "No Cutting Heights Unit selected yet";
-    public virtual string SurfaceUnit => SurfaceUni?.UnitShort ?? "No Surface Unit selected yet";
-    public virtual string TotalSurfaceUnit => SurfaceUni?.UnitShort ?? "No total Surface Unit selected yet";
-    public virtual string ElevationUnit => ElevationUniLen?.UnitShort ?? "No Elevation Unit selected yet";
     public virtual Guid? CoordinatePubId => Coordinate?.PubId;
     public virtual Guid? ClimateZonePubId => ClimateZone?.PubId;
     public virtual Guid? AppImagePubId => AppImage?.PubId;
@@ -165,15 +127,6 @@ public class Field
     public FieldType? FieldType { get; set; }
     public DirectorOfGolf? DoG { get; set; }
     public required Ibu Ibu { get; set; }
-    public Unit? ClippingsUni { get; set; }
-    public Unit? CutUniLen { get; set; }
-    public Unit? GreenSpeedUniLen { get; set; }
-    public Unit? RainUni { get; set; }
-    public Unit? SurfaceUni { get; set; }
-    public Unit? ElevationUniLen { get; set; }
-    public Unit? TotalSurfaceUni { get; set; }
-    public Unit? WindUni { get; set; }
-    public Unit? TempUni { get; set; }
     public Jurisdiction? Jurisdiction { get; set; }
     public ClimateZone? ClimateZone { get; set; }
     [ForeignKey(nameof(PrimaryRiskAreaId))]
@@ -185,7 +138,6 @@ public class Field
     public virtual ICollection<Area> Areas { get; set; } = [];
     public virtual ICollection<BudgetNum> BudgetNums { get; set; } = [];
     public virtual ICollection<FieldClimateNormal> ClimateNormals { get; set; } = [];
-    public virtual ICollection<ClippArea> ClippAreas { get; set; } = [];
     public virtual ICollection<Diary> Diaries { get; set; } = [];
     public virtual ICollection<Event> Events { get; set; } = [];
     public virtual ICollection<GreenSpeed> GreenSpeeds { get; set; } = [];

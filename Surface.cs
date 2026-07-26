@@ -21,6 +21,8 @@ public partial class Surface
     [Precision(7, 1)]
     public decimal SurfaceSizeM2 { get; set; }
 
+    public bool UseForClippingMeasurements { get; set; } = true;
+
     public virtual string SurfaceName => $"{Area.AreaName} {Hole.HolDes}";
 
     public required Field Field { get; set; }
@@ -30,6 +32,7 @@ public partial class Surface
     public virtual ICollection<AgrTaskHole> AgrTaskHoles { get; set; } = [];
     public virtual ICollection<AgrTaskWeekHole> AgrTaskWeekHoles { get; set; } = [];
     public virtual ICollection<AreaCompositionPhoto> AreaCompositionPhotos { get; set; } = [];
+    public virtual ICollection<ClippMeas> ClippMeass { get; set; } = [];
     public virtual ICollection<SurfaceCompositionAnalysisJob> SurfaceCompositionAnalysisJobs { get; set; } = [];
     public virtual ICollection<SurfaceCompositionTransmission> SurfaceCompositionTransmissions { get; set; } = [];
     public virtual ICollection<SoilTest> SoilTests { get; set; } = [];

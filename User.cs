@@ -46,6 +46,10 @@ public partial class User : IdentityUser<int>
     public int? VisualizationTempUnitId { get; set; }
     public int? VisualizationRainUnitId { get; set; }
     public int? VisualizationWindUnitId { get; set; }
+    public int? VisualizationGreenSpeedUnitId { get; set; }
+    public int? VisualizationCuttingHeightUnitId { get; set; }
+    public int? VisualizationClippingsUnitId { get; set; }
+    public int? VisualizationSurfaceUnitId { get; set; }
 
     public virtual string RolesTxt => UserRole.Count > 0 ? string.Join(" ,", [.. UserRole.Select(ur => ur.Role.Name)]) : "no Roles available";
 
@@ -54,6 +58,10 @@ public partial class User : IdentityUser<int>
     public Unit? VisualizationTempUnit { get; set; }
     public Unit? VisualizationRainUnit { get; set; }
     public Unit? VisualizationWindUnit { get; set; }
+    public Unit? VisualizationGreenSpeedUnit { get; set; }
+    public Unit? VisualizationCuttingHeightUnit { get; set; }
+    public Unit? VisualizationClippingsUnit { get; set; }
+    public Unit? VisualizationSurfaceUnit { get; set; }
     public AppImage? UserImg { get; set; }
     public Name? Name { get; set; }
     public Ibu? Ibu { get; set; }

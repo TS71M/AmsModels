@@ -18,7 +18,7 @@ public partial class IrrigationLog
 
     [Display(Name = "Amount")]
     public virtual string QuantityL => Quantity + UniWei.UnitShort;
-    public virtual string UniSurL => Area?.Field?.SurfaceUniId is null ? string.Empty : Area.Field.SurfaceUniId == 1 ? "mm" : "in";
+    public virtual string UniSurL => "mm";
 
     [Display(Name = "per Surface")]
     public virtual string EtL => Et + UniSurL;

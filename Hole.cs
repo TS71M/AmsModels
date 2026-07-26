@@ -30,7 +30,6 @@ public partial class Hole
 
     public virtual ICollection<AgrTaskHole> AgrTaskHoles { get; set; } = [];
     public virtual ICollection<AgrTaskWeekHole> AgrTaskWeekHoles { get; set; } = [];
-    public virtual ICollection<ClippArea> ClippAreas { get; set; } = [];
     public virtual ICollection<GreenSpeed> GreenSpeeds { get; set; } = [];
     public virtual ICollection<OperationHole> OperationHelps { get; set; } = [];
     public virtual ICollection<SnagList> SnagLists { get; set; } = [];
