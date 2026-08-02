@@ -15,5 +15,12 @@ public partial class ClippMeas
     public DateTime MesTime { get; set; }
     public decimal MesQua { get; set; }
 
+    /// <summary>
+    /// Snapshot of the completely mown Surface area used to normalize the
+    /// collected clipping volume. Nullable only for legacy measurements whose
+    /// Surface area was not configured when they were recorded.
+    /// </summary>
+    public decimal? SampleAreaM2 { get; set; }
+
     public required Surface Surface { get; set; }
 }

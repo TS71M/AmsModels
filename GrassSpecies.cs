@@ -86,6 +86,7 @@ public partial class GrassSpecies
     public ICollection<GrassSpeciesAlias> GraCulAliases { get; set; } = [];
     public ICollection<GrassSpeciesChemical> GraCulChems { get; set; } = [];
     public ICollection<GrassSpeciesTimingProfile> GrassSpeciesTimingProfiles { get; set; } = [];
+    public ICollection<DiseaseGrassSpeciesSusceptibility> DiseaseSusceptibilities { get; set; } = [];
 
     [NotMapped]
     public decimal KNRatioMean => (KNRatioMin + KNRatioMax) / 2m;

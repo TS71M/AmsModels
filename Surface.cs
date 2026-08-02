@@ -23,7 +23,7 @@ public partial class Surface
 
     public bool UseForClippingMeasurements { get; set; } = true;
 
-    public virtual string SurfaceName => $"{Area.AreaName} {Hole.HolDes}";
+    public virtual string SurfaceName => $"{Area?.AreaName} {Hole?.HolDes}".Trim();
 
     public required Field Field { get; set; }
     public required Area Area { get; set; }

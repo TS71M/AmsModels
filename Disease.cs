@@ -42,5 +42,6 @@ public partial class Disease
     public virtual ICollection<DiseaseAlias> DiseaseAliases { get; set; } = [];
     public virtual ICollection<DiseasePicture> DiseasePictures { get; set; } = [];
     public virtual ICollection<DiseaseGrassType> DiseaseGrassTypes { get; set; } = [];
+    public virtual ICollection<DiseaseGrassSpeciesSusceptibility> GrassSpeciesSusceptibilities { get; set; } = [];
     public virtual ICollection<DiseaseTrainingExample> DiseaseTrainingExamples { get; set; } = [];
 }
