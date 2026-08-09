@@ -22,7 +22,7 @@ public partial class AppImage
     public byte[]? ImageFile { get; set; }
     public DateTime UploadDate { get; set; }
     public int ImageSize { get; set; }
-    public int UploadedById { get; set; }
+    public int? UploadedById { get; set; }
     public DateTime? CapturedAtUtc { get; set; }
     public decimal? CaptureLatitude { get; set; }
     public decimal? CaptureLongitude { get; set; }

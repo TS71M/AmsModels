@@ -39,6 +39,20 @@ public class WeatherDaySummary
     [MaxLength(64)]
     public string? Source { get; set; } = "openweathermap";
 
+    // Evidence metadata keeps daily calculations reproducible when observations,
+    // interpolations, and forecast-derived gap fills coexist in the hourly table.
+    public short? ObservedHourCount { get; set; }
+
+    public short? ImputedHourCount { get; set; }
+
+    public short? ForecastDerivedHourCount { get; set; }
+
+    [MaxLength(32)]
+    public string? Quality { get; set; }
+
+    [MaxLength(32)]
+    public string? AggregationVersion { get; set; }
+
     [Required]
     public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow;
 

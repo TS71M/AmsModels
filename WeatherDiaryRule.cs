@@ -1,6 +1,6 @@
 namespace AmsModels;
 
-[Index(nameof(EventKey), IsUnique = true)]
+[Index(nameof(EventKey))]
 public sealed class WeatherDiaryRule
 {
     [Key]

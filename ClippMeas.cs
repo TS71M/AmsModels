@@ -13,6 +13,7 @@ public partial class ClippMeas
 
     [Required]
     public DateTime MesTime { get; set; }
+    public DateTime? PreviousCutTime { get; set; }
     public decimal MesQua { get; set; }
 
     /// <summary>

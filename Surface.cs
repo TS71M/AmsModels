@@ -21,7 +21,16 @@ public partial class Surface
     [Precision(7, 1)]
     public decimal SurfaceSizeM2 { get; set; }
 
+    [Precision(5, 2)]
+    public decimal? DryVwcThreshold { get; set; }
+
+    [Precision(5, 2)]
+    public decimal? WetVwcThreshold { get; set; }
+
     public bool UseForClippingMeasurements { get; set; } = true;
+
+    /// <summary>Server tombstone used to invalidate older offline surface-mapping drafts.</summary>
+    public DateTimeOffset? SurfaceMappingClearedAtUtc { get; set; }
 
     public virtual string SurfaceName => $"{Area?.AreaName} {Hole?.HolDes}".Trim();
 
@@ -37,4 +46,6 @@ public partial class Surface
     public virtual ICollection<SurfaceCompositionTransmission> SurfaceCompositionTransmissions { get; set; } = [];
     public virtual ICollection<SoilTest> SoilTests { get; set; } = [];
     public virtual ICollection<TaskWorkHole> TaskWorkHoles { get; set; } = [];
+    public virtual ICollection<SurfaceMapSubsection> MapSubsections { get; set; } = [];
+    public virtual ICollection<SurfaceMapRevision> MapRevisions { get; set; } = [];
 }

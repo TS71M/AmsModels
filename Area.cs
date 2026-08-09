@@ -36,6 +36,12 @@ public partial class Area
     [Precision(5, 2)]
     public decimal EtThreshold { get; set; }
 
+    [Precision(5, 2)]
+    public decimal DryVwcThreshold { get; set; } = 15m;
+
+    [Precision(5, 2)]
+    public decimal WetVwcThreshold { get; set; } = 25m;
+
     public bool Irrigated { get; set; }
     public bool Report { get; set; }
 
@@ -43,6 +49,8 @@ public partial class Area
     public decimal Whc { get; set; }
 
     public bool HasSurface { get; set; }
+    /// <summary>When mapped, this surface type is deducted from containing surfaces.</summary>
+    public bool SubtractFromContainingSurface { get; set; }
     public bool GreenSpeed { get; set; }
 
     public int BaseTemp { get; set; } = 10;
