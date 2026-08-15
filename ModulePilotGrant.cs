@@ -1,19 +1,20 @@
 namespace AmsModels;
 
-[Index(nameof(IbuId), nameof(ModuleKey), IsUnique = true)]
-public class IbuModuleSetting
+[Index(nameof(ModuleKey), nameof(IbuId), IsUnique = true)]
+[Index(nameof(Active), nameof(ExpiresAtUtc))]
+public class ModulePilotGrant
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int IbuModuleSettingId { get; set; }
-
-    public int IbuId { get; set; }
+    public int ModulePilotGrantId { get; set; }
 
     [Required, MaxLength(80)]
     public string ModuleKey { get; set; } = "";
 
-    public bool IsEnabled { get; set; } = true;
+    public int IbuId { get; set; }
 
-    public bool RestrictToSelectedFields { get; set; }
+    public bool Active { get; set; } = true;
+
+    public DateTime? ExpiresAtUtc { get; set; }
 
     public DateTime CreatedAtUtc { get; set; }
 
@@ -24,6 +25,4 @@ public class IbuModuleSetting
     public Ibu? Ibu { get; set; }
 
     public User? UpdatedByUser { get; set; }
-
-    public virtual ICollection<IbuModuleFieldPermission> FieldPermissions { get; set; } = [];
 }

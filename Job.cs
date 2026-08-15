@@ -5,6 +5,9 @@ public partial class Job
     [Key]
     public int JobId { get; set; }
 
+    [Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public Guid PubId { get; set; }
+
     [Required]
     public int IbuId { get; set; }
     public int? FieldId { get; set; }
@@ -26,7 +29,9 @@ public partial class Job
     public Field? Field { get; set; }
     public required Ibu Ibu { get; set; }
 
+    public JobComparableTaskMapping? ComparableTaskMapping { get; set; }
+
     public virtual ICollection<AgrTask> AgrTasks { get; set; } = [];
     public virtual ICollection<Operation> Operations { get; set; } = [];
     public virtual ICollection<Skill> Skillss { get; set; } = [];
-}
+}

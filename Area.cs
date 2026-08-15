@@ -33,6 +33,12 @@ public partial class Area
     [Precision(5, 2)]
     public decimal TempOpt { get; set; }
 
+    /// <summary>
+    /// Uses <see cref="TempOpt"/> only when no usable grass composition is available.
+    /// Composition-derived growth potential always takes precedence.
+    /// </summary>
+    public bool UseGrowthPotentialTemperatureOverride { get; set; }
+
     [Precision(5, 2)]
     public decimal EtThreshold { get; set; }
 

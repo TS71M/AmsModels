@@ -31,6 +31,41 @@ public enum ApplicationValidationStatus
     Blocked = 4
 }
 
+public enum ApplicationPlanRevisionStatus
+{
+    Draft = 0,
+    Approved = 1,
+    Superseded = 2
+}
+
+public enum ApplicationPlanItemScheduleStatus
+{
+    Planned = 0,
+    Postponed = 1,
+    Skipped = 2
+}
+
+public enum ApplicationPlanItemScheduleEventType
+{
+    Postponed = 1,
+    Skipped = 2,
+    Reopened = 3
+}
+
+public enum ApplicationPlanItemScheduleReason
+{
+    Weather = 1,
+    SurfaceUnavailable = 2,
+    ProductUnavailable = 3,
+    EquipmentUnavailable = 4,
+    Staffing = 5,
+    GrowthConditions = 6,
+    AgronomicDecision = 7,
+    ReplacedByAnotherApplication = 8,
+    Correction = 9,
+    Other = 99
+}
+
 public enum ApplicationTriggerSeverity
 {
     Info = 0,

@@ -14,6 +14,9 @@ public class ProcurementHubSetting
     public bool Active { get; set; } = true;
     public bool AllowDirectSupplierOrderingDefault { get; set; } = true;
     public bool ConsolidateRequisitionsDefault { get; set; }
+    public bool RequireApprovalDefault { get; set; } = true;
+    public bool AllowSelfApprovalDefault { get; set; }
+    public bool RequireRequestForQuoteDefault { get; set; }
 
     [MaxLength(500)]
     public string Notes { get; set; } = "";

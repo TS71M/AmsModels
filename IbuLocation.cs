@@ -3,6 +3,7 @@ namespace AmsModels;
 [Index(nameof(PubId), IsUnique = true)]
 [Index(nameof(IbuId))]
 [Index(nameof(IbuId), nameof(Active), nameof(SortOrder))]
+[Index(nameof(FieldId), nameof(Active), nameof(SortOrder))]
 public sealed class IbuLocation
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -12,6 +13,7 @@ public sealed class IbuLocation
     public Guid PubId { get; set; }
 
     public int IbuId { get; set; }
+    public int? FieldId { get; set; }
 
     [Required, MaxLength(100)]
     public string Name { get; set; } = "";
@@ -26,4 +28,6 @@ public sealed class IbuLocation
     public bool Active { get; set; } = true;
     [DeleteBehavior(DeleteBehavior.Restrict)]
     public Ibu Ibu { get; set; } = null!;
+    [DeleteBehavior(DeleteBehavior.Restrict)]
+    public Field? Field { get; set; }
 }

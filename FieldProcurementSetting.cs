@@ -20,9 +20,17 @@ public class FieldProcurementSetting
     public int? ProcurementManagerUserId { get; set; }
     public bool AllowDirectSupplierOrdering { get; set; } = true;
     public bool ConsolidateRequisitions { get; set; } = true;
+    public bool RequireApproval { get; set; } = true;
+    public bool AllowSelfApproval { get; set; }
+    public bool RequireRequestForQuote { get; set; }
+    public bool RequireCostCenter { get; set; }
+    public bool RequireBudgetReference { get; set; }
 
     [MaxLength(500)]
     public string Notes { get; set; } = "";
+
+    [MaxLength(500)]
+    public string DefaultDeliveryLocation { get; set; } = "";
 
     public required Field Field { get; set; }
     public Ibu? ProcurementHubIbu { get; set; }

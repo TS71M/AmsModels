@@ -2,6 +2,7 @@ namespace AmsModels;
 
 [Index(nameof(PubId), IsUnique = true)]
 [Index(nameof(SurfaceId))]
+[Index(nameof(SurfaceId), nameof(AnalysisReviewedAtUtc))]
 [Index(nameof(CreatedAtUtc))]
 public class SurfaceCompositionTransmission
 {
@@ -59,8 +60,21 @@ public class SurfaceCompositionTransmission
 
     public string? RerunResultJson { get; set; }
 
+    [MaxLength(32)]
+    public string? AnalysisReviewOutcome { get; set; }
+
+    [MaxLength(2000)]
+    public string? AnalysisReviewComment { get; set; }
+
+    public DateTime? AnalysisReviewedAtUtc { get; set; }
+
+    public int? AnalysisReviewedByUserId { get; set; }
+
     [ForeignKey(nameof(SurfaceId))]
     public Surface Surface { get; set; } = default!;
+
+    [ForeignKey(nameof(AnalysisReviewedByUserId))]
+    public User? AnalysisReviewedByUser { get; set; }
 
     public ICollection<SurfaceCompositionTransmissionSpecies> Species { get; set; } = [];
     public ICollection<AreaCompositionPhoto> Photos { get; set; } = [];

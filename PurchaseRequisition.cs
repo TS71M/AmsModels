@@ -23,6 +23,11 @@ public class PurchaseRequisition
     public DateTime RequestedDt { get; set; } = DateTime.UtcNow;
     public DateTime? NeedByDate { get; set; }
     public DateTime? ReviewedDt { get; set; }
+    public ProcurementUrgency Urgency { get; set; } = ProcurementUrgency.Routine;
+    public bool AllowSubstitution { get; set; }
+
+    [ConcurrencyCheck]
+    public Guid ConcurrencyToken { get; set; } = Guid.NewGuid();
 
     [MaxLength(100)]
     public string ReferenceNo { get; set; } = "";
@@ -36,6 +41,15 @@ public class PurchaseRequisition
     [MaxLength(1000)]
     public string DecisionNotes { get; set; } = "";
 
+    [MaxLength(500)]
+    public string DeliveryLocation { get; set; } = "";
+
+    [MaxLength(100)]
+    public string CostCenter { get; set; } = "";
+
+    [MaxLength(100)]
+    public string BudgetReference { get; set; } = "";
+
     public required Ibu Ibu { get; set; }
     public required Field Field { get; set; }
     public required User RequestedByUser { get; set; }
@@ -43,4 +57,7 @@ public class PurchaseRequisition
     public User? ProcurementManagerUser { get; set; }
 
     public virtual ICollection<PurchaseRequisitionLine> Lines { get; set; } = [];
+    public virtual ICollection<PurchaseRequisitionEvent> Events { get; set; } = [];
+    public virtual ICollection<ProcurementQuote> Quotes { get; set; } = [];
+    public virtual ICollection<ProcurementPurchaseOrder> PurchaseOrders { get; set; } = [];
 }

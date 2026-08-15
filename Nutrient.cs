@@ -1,5 +1,6 @@
 namespace AmsModels;
 
+[Index(nameof(Code), IsUnique = true)]
 public class Nutrient
 {
     [Key]
@@ -10,6 +11,10 @@ public class Nutrient
 
     [Required, MaxLength(45)]
     public string NutrientName { get; set; } = "";
+
+    [Required, MaxLength(20)]
+    public string Code { get; set; } = "";
+
     public int OrderNumber { get; set; }
 
     public virtual ICollection<ProductNutrient> ProductNutrients { get; set; } = [];

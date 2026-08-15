@@ -56,6 +56,7 @@ public partial class Ibu
     public virtual ICollection<IbuAccessProfile> AccessProfiles { get; set; } = [];
     public virtual ICollection<IbuYearActive> IbuYearActives { get; set; } = [];
     public virtual ICollection<IbuModuleSetting> ModuleSettings { get; set; } = [];
+    public virtual ICollection<ModulePilotGrant> ModulePilotGrants { get; set; } = [];
     public virtual ICollection<IbuRelationship> ManagedClientRelationships { get; set; } = [];
     public virtual ICollection<IbuRelationship> ManagerRelationships { get; set; } = [];
     public virtual ICollection<IbuClaimRequest> ClaimRequests { get; set; } = [];

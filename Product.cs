@@ -20,6 +20,9 @@ public partial class Product
     public decimal Rate { get; set; } = 0;
     public decimal RecRat { get; set; }
 
+    [Precision(8, 4)]
+    public decimal? DensityKgPerL { get; set; }
+
     [ForeignKey(nameof(UniWei))]
     public int UniWeiId { get; set; }
     public int UniSurId { get; set; }

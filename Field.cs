@@ -152,6 +152,7 @@ public class Field
     public virtual ICollection<Surface> Surfaces { get; set; } = [];
     public virtual ICollection<TaskGlobal> TaskGlobals { get; set; } = [];
     public virtual ICollection<IbuRelationshipField> IbuRelationshipFields { get; set; } = [];
+    public virtual ICollection<IbuModuleFieldPermission> IbuModuleFieldPermissions { get; set; } = [];
     public virtual ICollection<UserFieldPermission> UserFieldPermissions { get; set; } = [];
     public virtual ICollection<WeatherObservation> WeatherObservations { get; set; } = [];
     public virtual ICollection<WeatherForecastHour> WeatherForecastHours { get; set; } = [];

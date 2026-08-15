@@ -22,6 +22,9 @@ public sealed class UserSession
     public DateTime? LastUsedUtc { get; set; }
     public DateTime? RevokedUtc { get; set; }
 
+    [Required, MaxLength(20)]
+    public string AuthenticationMethod { get; set; } = Lib.Constants.AuthenticationMethods.Password;
+
     [MaxLength(45)]
     public string? IpAddress { get; set; }
 

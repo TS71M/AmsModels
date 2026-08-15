@@ -1,3 +1,5 @@
+using Lib.Planning;
+
 namespace AmsModels;
 
 public class ProductNutrient
@@ -10,6 +12,13 @@ public class ProductNutrient
     public int ProductId { get; set; }
     public int NutrientId { get; set; }
     public decimal Amount { get; set; }
+    public FertilizerNutrientAnalysisBasis AnalysisBasis { get; set; } = FertilizerNutrientAnalysisBasis.PercentByMass;
+
+    [MaxLength(250)]
+    public string AnalysisSource { get; set; } = "";
+
+    public bool IsVerified { get; set; }
+    public DateTime? VerifiedAtUtc { get; set; }
 
     public required Nutrient Nutrient { get; set; }
     public required Product Product { get; set; }
