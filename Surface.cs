@@ -48,4 +48,5 @@ public partial class Surface
     public virtual ICollection<TaskWorkHole> TaskWorkHoles { get; set; } = [];
     public virtual ICollection<SurfaceMapSubsection> MapSubsections { get; set; } = [];
     public virtual ICollection<SurfaceMapRevision> MapRevisions { get; set; } = [];
+    public virtual ICollection<SurfaceSprinkler> Sprinklers { get; set; } = [];
 }

@@ -63,4 +63,6 @@ public sealed class ResearchArticle
     public DateTime UpdatedUtc { get; set; } = DateTime.UtcNow;
 
     public ICollection<ResearchDiscussionMessage> DiscussionMessages { get; set; } = [];
+    public ICollection<ResearchArticleReaction> Reactions { get; set; } = [];
+    public ICollection<ResearchArticleComment> Comments { get; set; } = [];
 }

@@ -87,6 +87,9 @@ public partial class User : IdentityUser<int>
     public virtual ICollection<MobileBugReport> MobileBugReports { get; set; } = [];
     public virtual ICollection<AssistantConversationLog> AssistantConversationLogs { get; set; } = [];
     public virtual ICollection<UserSession> Sessions { get; set; } = [];
+    public virtual ICollection<ResearchArticleReaction> ResearchArticleReactions { get; set; } = [];
+    public virtual ICollection<ResearchArticleComment> ResearchArticleComments { get; set; } = [];
+    public virtual ICollection<ResearchArticleComment> RemovedResearchArticleComments { get; set; } = [];
     public virtual ICollection<PushDevice> PushDevices { get; set; } = [];
     public virtual ICollection<UserReportingLine> ReportingLines { get; set; } = [];
     public virtual ICollection<UserReportingLine> DirectReportReportingLines { get; set; } = [];

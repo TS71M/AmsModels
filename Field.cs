@@ -156,6 +156,7 @@ public class Field
     public virtual ICollection<UserFieldPermission> UserFieldPermissions { get; set; } = [];
     public virtual ICollection<WeatherObservation> WeatherObservations { get; set; } = [];
     public virtual ICollection<WeatherForecastHour> WeatherForecastHours { get; set; } = [];
+    public virtual ICollection<FieldWeatherLocation> WeatherLocations { get; set; } = [];
     public virtual ICollection<FieldZone> FieldZones { get; set; } = [];
     public virtual ICollection<FieldMask> FieldMasks { get; set; } = [];
     public virtual SatelliteStressMonitoringSetting? SatelliteStressMonitoringSetting { get; set; }

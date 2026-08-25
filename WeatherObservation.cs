@@ -9,7 +9,7 @@ public enum WeatherObservationSourceType : short
     Computed = 4
 }
 
-[Index(nameof(FieldId), nameof(ObservedAtUtc), IsUnique = true)]
+[Index(nameof(FieldId), nameof(WeatherLocationPubId), nameof(ObservedAtUtc), Name = "UX_WeatherObs_Field_Location_Hour", IsUnique = true)]
 [Index(nameof(FieldId))]
 [Index(nameof(ObservedAtUtc))]
 [Index(nameof(SourceType))]
@@ -24,6 +24,9 @@ public class WeatherObservation
 
     [Required]
     public Field Field { get; set; } = null!;
+
+    [Required]
+    public Guid WeatherLocationPubId { get; set; } = Guid.Empty;
 
     [Required]
     public DateTime ObservedAtUtc { get; set; }

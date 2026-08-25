@@ -1,6 +1,6 @@
 namespace AmsModels;
 
-[Index(nameof(FieldId), nameof(ForecastForUtc), IsUnique = true)]
+[Index(nameof(FieldId), nameof(WeatherLocationPubId), nameof(ForecastForUtc), Name = "UX_WeatherFc_Field_Location_Hour", IsUnique = true)]
 public class WeatherForecastHour
 {
     [Key]
@@ -12,6 +12,9 @@ public class WeatherForecastHour
 
     [Required]
     public Field Field { get; set; } = null!;
+
+    [Required]
+    public Guid WeatherLocationPubId { get; set; } = Guid.Empty;
 
     [Required]
     public DateTime ForecastForUtc { get; set; }
@@ -61,4 +64,4 @@ public class WeatherForecastHour
     public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow;
 
     public static bool IsInterpolated { get; set; } = false;
-}
+}
