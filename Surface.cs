@@ -27,7 +27,7 @@ public partial class Surface
     [Precision(5, 2)]
     public decimal? WetVwcThreshold { get; set; }
 
-    public bool UseForClippingMeasurements { get; set; } = true;
+    public bool UseForClippingMeasurements { get; set; }
 
     /// <summary>Server tombstone used to invalidate older offline surface-mapping drafts.</summary>
     public DateTimeOffset? SurfaceMappingClearedAtUtc { get; set; }

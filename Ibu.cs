@@ -65,6 +65,10 @@ public partial class Ibu
     public virtual ICollection<LicenseHistory> LicenseHistories { get; set; } = [];
     public virtual ICollection<LicenseIbu> LicenseIbus { get; set; } = [];
     public virtual ICollection<LoginLog> Logins { get; set; } = [];
+    public virtual ICollection<LynxImport> LynxImports { get; set; } = [];
+    public virtual ICollection<IrrigationSystem> IrrigationSystems { get; set; } = [];
+    public virtual ICollection<CatchCanTest> CatchCanTests { get; set; } = [];
+    public virtual ICollection<IrrigationCalibrationLayer> IrrigationCalibrationLayers { get; set; } = [];
     public virtual ICollection<UserPageVisit> PageVisits { get; set; } = [];
     public virtual ICollection<MobileBugReport> MobileBugReports { get; set; } = [];
     public virtual ICollection<AssistantConversationLog> AssistantConversationLogs { get; set; } = [];

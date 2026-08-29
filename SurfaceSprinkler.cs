@@ -34,6 +34,10 @@ public sealed class SurfaceSprinkler
     [MaxLength(1000)]
     public string RecognitionSummary { get; set; } = "";
 
+    public string RecognitionAnalysisJson { get; set; } = "";
+
+    public string RecognitionAnalysisHistoryJson { get; set; } = "[]";
+
     [MaxLength(500)]
     public string ConditionFlags { get; set; } = "";
 
@@ -75,4 +79,6 @@ public sealed class SurfaceSprinkler
     public AppImage? FrontImage { get; set; }
     public AppImage? BackImage { get; set; }
     public ICollection<SurfaceSprinklerNozzle> Nozzles { get; set; } = [];
+    public ICollection<IrrigationSprinklerRecognitionExample> ApprovedRecognitionExamples { get; set; } = [];
+    public ICollection<IrrigationSprinklerRecognitionPatternProposal> RecognitionPatternProposals { get; set; } = [];
 }

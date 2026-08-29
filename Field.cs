@@ -162,6 +162,7 @@ public class Field
     public virtual SatelliteStressMonitoringSetting? SatelliteStressMonitoringSetting { get; set; }
     public virtual ICollection<SatelliteStressScanRun> SatelliteStressScanRuns { get; set; } = [];
     public ICollection<FieldWeedTimingOverride> FieldWeedTimingOverrides { get; set; } = [];
+    public ICollection<IrrigationArea> IrrigationAreas { get; set; } = [];
     public FieldProcurementSetting? ProcurementSetting { get; set; }
     public virtual ICollection<PurchaseRequisition> PurchaseRequisitions { get; set; } = [];
 

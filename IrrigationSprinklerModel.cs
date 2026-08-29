@@ -21,6 +21,12 @@ public sealed class IrrigationSprinklerModel
     [Range(1, 5)]
     public int MaximumNozzleCount { get; set; } = 1;
 
+    [Precision(6, 2), Range(typeof(decimal), "0", "100")]
+    public decimal? DefaultMinPressureBar { get; set; }
+
+    [Precision(6, 2), Range(typeof(decimal), "0", "100")]
+    public decimal? DefaultMaxPressureBar { get; set; }
+
     [MaxLength(500)]
     public string? SourceUrl { get; set; }
 
@@ -36,4 +42,7 @@ public sealed class IrrigationSprinklerModel
     public ICollection<IrrigationNozzleConfiguration> NozzleConfigurations { get; set; } = [];
     public ICollection<IrrigationSprinklerNozzleOption> NozzleOptions { get; set; } = [];
     public ICollection<SurfaceSprinkler> SurfaceSprinklers { get; set; } = [];
+    public ICollection<IrrigationHead> IrrigationHeads { get; set; } = [];
+    public ICollection<IrrigationSourceReference> IrrigationSourceReferences { get; set; } = [];
+    public IrrigationSprinklerRecognitionProfile? RecognitionProfile { get; set; }
 }
