@@ -42,6 +42,7 @@ public sealed class IrrigationSystem
 
     public required Ibu Ibu { get; set; }
     public ICollection<IrrigationController> Controllers { get; set; } = [];
+    public ICollection<IrrigationControlStation> ControlStations { get; set; } = [];
     public ICollection<IrrigationHead> Heads { get; set; } = [];
     public ICollection<IrrigationArea> Areas { get; set; } = [];
     public ICollection<IrrigationSourceReference> SourceReferences { get; set; } = [];

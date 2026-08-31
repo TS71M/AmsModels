@@ -28,6 +28,9 @@ public sealed class IrrigationNozzleConfigurationSlot
     [MaxLength(80)]
     public string Color { get; set; } = "";
 
+    [Range(typeof(decimal), "-180", "180")]
+    public decimal? RecommendedInstallationAngleDegrees { get; set; }
+
     public bool IsOptional { get; set; }
 
     public required IrrigationNozzleConfiguration Configuration { get; set; }

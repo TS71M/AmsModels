@@ -35,6 +35,7 @@ public sealed class IrrigationSprinklerModel
 
     public bool IsLegacy { get; set; }
     public bool IsAiDiscovered { get; set; }
+    public int? IrrigationHydraulicPlatformId { get; set; }
     public bool Active { get; set; } = true;
     public DateTime CreatedAtUtc { get; set; }
     public DateTime UpdatedAtUtc { get; set; }
@@ -45,4 +46,5 @@ public sealed class IrrigationSprinklerModel
     public ICollection<IrrigationHead> IrrigationHeads { get; set; } = [];
     public ICollection<IrrigationSourceReference> IrrigationSourceReferences { get; set; } = [];
     public IrrigationSprinklerRecognitionProfile? RecognitionProfile { get; set; }
+    public IrrigationHydraulicPlatform? HydraulicPlatform { get; set; }
 }

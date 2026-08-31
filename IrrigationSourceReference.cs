@@ -3,6 +3,7 @@ namespace AmsModels;
 [Index(nameof(PubId), IsUnique = true)]
 [Index(nameof(IrrigationSystemId))]
 [Index(nameof(IrrigationControllerId))]
+[Index(nameof(IrrigationControlStationId))]
 [Index(nameof(IrrigationHeadId))]
 [Index(nameof(IrrigationSprinklerModelId))]
 [Index(nameof(IrrigationSprinklerNozzleOptionId))]
@@ -18,6 +19,7 @@ public sealed class IrrigationSourceReference
 
     public int IrrigationSystemId { get; set; }
     public int? IrrigationControllerId { get; set; }
+    public int? IrrigationControlStationId { get; set; }
     public int? IrrigationHeadId { get; set; }
     public int? IrrigationSprinklerModelId { get; set; }
     public int? IrrigationSprinklerNozzleOptionId { get; set; }
@@ -36,6 +38,7 @@ public sealed class IrrigationSourceReference
 
     public required IrrigationSystem IrrigationSystem { get; set; }
     public IrrigationController? IrrigationController { get; set; }
+    public IrrigationControlStation? IrrigationControlStation { get; set; }
     public IrrigationHead? IrrigationHead { get; set; }
     public IrrigationSprinklerModel? SprinklerModel { get; set; }
     public IrrigationSprinklerNozzleOption? SprinklerNozzle { get; set; }

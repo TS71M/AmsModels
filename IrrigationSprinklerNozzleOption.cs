@@ -12,6 +12,7 @@ public sealed class IrrigationSprinklerNozzleOption
     public Guid PubId { get; set; }
 
     public int IrrigationSprinklerModelId { get; set; }
+    public int? IrrigationCatalogComponentId { get; set; }
     public IrrigationNozzlePositionKind PositionKind { get; set; }
 
     [Required, MaxLength(80)]
@@ -47,6 +48,7 @@ public sealed class IrrigationSprinklerNozzleOption
     public DateTime UpdatedAtUtc { get; set; }
 
     public required IrrigationSprinklerModel SprinklerModel { get; set; }
+    public IrrigationCatalogComponent? CatalogComponent { get; set; }
     public ICollection<IrrigationNozzleConfigurationSlot> ConfigurationSlots { get; set; } = [];
     public ICollection<SurfaceSprinklerNozzle> InstalledNozzles { get; set; } = [];
     public ICollection<IrrigationHead> IrrigationHeads { get; set; } = [];

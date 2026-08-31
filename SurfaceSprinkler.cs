@@ -10,11 +10,13 @@ public sealed class SurfaceSprinkler
     public Guid PubId { get; set; }
 
     public int SurfaceId { get; set; }
+    public int? IrrigationHeadId { get; set; }
     public int? IrrigationSprinklerModelId { get; set; }
     public int? IrrigationNozzleConfigurationId { get; set; }
     public int? TopImageId { get; set; }
     public int? FrontImageId { get; set; }
     public int? BackImageId { get; set; }
+    public int? ReviewedByUserId { get; set; }
 
     [Required, MaxLength(80)]
     public string Identifier { get; set; } = "";
@@ -44,6 +46,9 @@ public sealed class SurfaceSprinkler
     [MaxLength(2000)]
     public string Notes { get; set; } = "";
 
+    [MaxLength(32)]
+    public string ReviewDecision { get; set; } = "";
+
     [Precision(9, 6)]
     public decimal? Latitude { get; set; }
 
@@ -67,17 +72,25 @@ public sealed class SurfaceSprinkler
     public bool NeedsReview { get; set; } = true;
     public bool Active { get; set; } = true;
     public DateTime? ConfirmedAtUtc { get; set; }
+    public DateTime? ReviewedAtUtc { get; set; }
+    public DateTime? IrrigationHeadLinkedAtUtc { get; set; }
+
+    [MaxLength(32)]
+    public string IrrigationHeadLinkMethod { get; set; } = "";
+
     public DateTime LastInspectedAtUtc { get; set; }
     public DateTime CreatedAtUtc { get; set; }
     public DateTime UpdatedAtUtc { get; set; }
     public int CreatedByUserId { get; set; }
 
     public required Surface Surface { get; set; }
+    public IrrigationHead? IrrigationHead { get; set; }
     public IrrigationSprinklerModel? SprinklerModel { get; set; }
     public IrrigationNozzleConfiguration? NozzleConfiguration { get; set; }
     public AppImage? TopImage { get; set; }
     public AppImage? FrontImage { get; set; }
     public AppImage? BackImage { get; set; }
+    public User? ReviewedByUser { get; set; }
     public ICollection<SurfaceSprinklerNozzle> Nozzles { get; set; } = [];
     public ICollection<IrrigationSprinklerRecognitionExample> ApprovedRecognitionExamples { get; set; } = [];
     public ICollection<IrrigationSprinklerRecognitionPatternProposal> RecognitionPatternProposals { get; set; } = [];

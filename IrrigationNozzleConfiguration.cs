@@ -12,6 +12,7 @@ public sealed class IrrigationNozzleConfiguration
     public Guid PubId { get; set; }
 
     public int? IrrigationSprinklerModelId { get; set; }
+    public int? IrrigationDocumentedNozzleSetId { get; set; }
     public int? IbuId { get; set; }
     public int? FieldId { get; set; }
 
@@ -33,11 +34,13 @@ public sealed class IrrigationNozzleConfiguration
 
     public bool IsAiDiscovered { get; set; }
     public bool IsApprovedReference { get; set; }
+    public IrrigationCompatibilityEvidenceLevel EvidenceLevel { get; set; }
     public bool Active { get; set; } = true;
     public DateTime CreatedAtUtc { get; set; }
     public DateTime UpdatedAtUtc { get; set; }
 
     public IrrigationSprinklerModel? SprinklerModel { get; set; }
+    public IrrigationDocumentedNozzleSet? DocumentedNozzleSet { get; set; }
     public Ibu? Ibu { get; set; }
     public Field? Field { get; set; }
     public ICollection<IrrigationNozzleConfigurationSlot> Slots { get; set; } = [];
