@@ -18,6 +18,9 @@ public partial class Surface
     [Required]
     public int HoleId { get; set; }
 
+    [MaxLength(80)]
+    public string? SurfaceLabel { get; set; }
+
     [Precision(7, 1)]
     public decimal SurfaceSizeM2 { get; set; }
 
@@ -32,7 +35,10 @@ public partial class Surface
     /// <summary>Server tombstone used to invalidate older offline surface-mapping drafts.</summary>
     public DateTimeOffset? SurfaceMappingClearedAtUtc { get; set; }
 
-    public virtual string SurfaceName => $"{Area?.AreaName} {Hole?.HolDes}".Trim();
+    public virtual string SurfaceName => string.Join(
+        " ",
+        new[] { Area?.AreaName, SurfaceLabel, Hole?.HolDes }
+            .Where(x => !string.IsNullOrWhiteSpace(x)));
 
     public required Field Field { get; set; }
     public required Area Area { get; set; }
@@ -49,4 +55,5 @@ public partial class Surface
     public virtual ICollection<SurfaceMapSubsection> MapSubsections { get; set; } = [];
     public virtual ICollection<SurfaceMapRevision> MapRevisions { get; set; } = [];
     public virtual ICollection<SurfaceSprinkler> Sprinklers { get; set; } = [];
+    public virtual ICollection<SurfaceHoleAssignment> HoleAssignments { get; set; } = [];
 }

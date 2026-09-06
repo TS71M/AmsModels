@@ -41,6 +41,8 @@ public sealed class IrrigationCatalogSourceDocument
     public ICollection<IrrigationHydraulicPlatformComponent> PlatformComponents { get; set; } = [];
     public ICollection<IrrigationDocumentedNozzleSet> DocumentedNozzleSets { get; set; } = [];
     public ICollection<IrrigationDocumentedNozzleSetPerformance> PerformanceRows { get; set; } = [];
+    public ICollection<IrrigationCatalogComponentPerformance> ComponentPerformanceRows { get; set; } = [];
+    public ICollection<IrrigationCatalogComponentReferenceImage> ComponentReferenceImages { get; set; } = [];
 }
 
 public sealed class IrrigationHydraulicPlatform
@@ -108,6 +110,90 @@ public sealed class IrrigationCatalogComponent
     public ICollection<IrrigationHydraulicPlatformComponent> PlatformApplications { get; set; } = [];
     public ICollection<IrrigationDocumentedNozzleSetComponent> NozzleSetApplications { get; set; } = [];
     public ICollection<IrrigationSprinklerNozzleOption> ModelNozzleOptions { get; set; } = [];
+    public ICollection<IrrigationCatalogComponentPerformance> PerformanceRows { get; set; } = [];
+    public ICollection<IrrigationCatalogComponentReferenceImage> ReferenceImages { get; set; } = [];
+}
+
+public sealed class IrrigationCatalogComponentPerformance
+{
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int IrrigationCatalogComponentPerformanceId { get; set; }
+
+    [Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public Guid PubId { get; set; }
+
+    public int IrrigationCatalogComponentId { get; set; }
+    public int IrrigationCatalogSourceDocumentId { get; set; }
+
+    [Required, MaxLength(200)]
+    public string UniquenessKey { get; set; } = "";
+
+    [Required, MaxLength(80)]
+    public string RoleCode { get; set; } = "";
+
+    public IrrigationNozzlePositionKind? PositionKind { get; set; }
+
+    [Precision(6, 3), Range(typeof(decimal), "0.001", "100")]
+    public decimal PressureBar { get; set; }
+
+    [Precision(10, 4), Range(typeof(decimal), "0.0001", "1000")]
+    public decimal FlowM3H { get; set; }
+
+    [Precision(8, 3), Range(typeof(decimal), "0.001", "200")]
+    public decimal RadiusM { get; set; }
+
+    [Precision(6, 2), Range(typeof(decimal), "0", "90")]
+    public decimal? TrajectoryDegrees { get; set; }
+
+    [MaxLength(500)]
+    public string OperatingContext { get; set; } = "";
+
+    [Range(1, 10000)]
+    public int SourcePage { get; set; }
+
+    public IrrigationCompatibilityEvidenceLevel EvidenceLevel { get; set; }
+    public bool Active { get; set; } = true;
+    public DateTime CreatedAtUtc { get; set; }
+    public DateTime UpdatedAtUtc { get; set; }
+
+    public required IrrigationCatalogComponent Component { get; set; }
+    public required IrrigationCatalogSourceDocument SourceDocument { get; set; }
+}
+
+public sealed class IrrigationCatalogComponentReferenceImage
+{
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int IrrigationCatalogComponentReferenceImageId { get; set; }
+
+    [Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public Guid PubId { get; set; }
+
+    public int IrrigationCatalogComponentId { get; set; }
+    public int IrrigationCatalogSourceDocumentId { get; set; }
+
+    [Range(1, 10000)]
+    public int SourcePage { get; set; }
+
+    [Required, MaxLength(100)]
+    public string ContentType { get; set; } = "image/png";
+
+    [Required]
+    public byte[] ImageBytes { get; set; } = [];
+
+    [Required, MaxLength(64)]
+    public string ContentSha256 { get; set; } = "";
+
+    [MaxLength(500)]
+    public string Description { get; set; } = "";
+
+    public IrrigationCompatibilityEvidenceLevel EvidenceLevel { get; set; }
+    public bool IsFocused { get; set; }
+    public bool Active { get; set; } = true;
+    public DateTime CreatedAtUtc { get; set; }
+    public DateTime UpdatedAtUtc { get; set; }
+
+    public required IrrigationCatalogComponent Component { get; set; }
+    public required IrrigationCatalogSourceDocument SourceDocument { get; set; }
 }
 
 public sealed class IrrigationHydraulicPlatformComponent
@@ -155,6 +241,15 @@ public sealed class IrrigationDocumentedNozzleSet
 
     [Required, MaxLength(200)]
     public string Name { get; set; } = "";
+
+    [MaxLength(80)]
+    public string MainNozzleNumber { get; set; } = "";
+
+    [MaxLength(120)]
+    public string GenerationCode { get; set; } = "";
+
+    public DateOnly? ValidFrom { get; set; }
+    public DateOnly? ValidUntil { get; set; }
 
     public IrrigationCompatibilityEvidenceLevel EvidenceLevel { get; set; }
 
@@ -295,6 +390,11 @@ public sealed class IrrigationCatalogImportBatch
     public string FailureSummary { get; set; } = "";
 
     public int CandidateCount { get; set; }
+    // Reuse the durable import queue for additive set discovery, without replacing earlier reviews.
+    public bool SetDiscoveryOnly { get; set; }
+    public DateTime? SetDiscoveryCompletedAtUtc { get; set; }
+    public int SetDiscoveryAddedCount { get; set; }
+    public int SetDiscoveryConfirmedCount { get; set; }
     public Guid? ProcessingToken { get; set; }
     public DateTime CreatedAtUtc { get; set; }
     public DateTime UpdatedAtUtc { get; set; }

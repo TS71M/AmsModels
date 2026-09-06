@@ -35,5 +35,6 @@ public partial class Hole
     public virtual ICollection<SnagList> SnagLists { get; set; } = [];
     public virtual ICollection<SoiTesSat> SoiTesSats { get; set; } = [];
     public virtual ICollection<Surface> Surfaces { get; set; } = [];
+    public virtual ICollection<SurfaceHoleAssignment> SurfaceAssignments { get; set; } = [];
     public virtual ICollection<TaskWorkHole> TaskWorkHolesExecuteds { get; set; } = [];
 }

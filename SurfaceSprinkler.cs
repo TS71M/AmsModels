@@ -73,6 +73,9 @@ public sealed class SurfaceSprinkler
     public bool Active { get; set; } = true;
     public DateTime? ConfirmedAtUtc { get; set; }
     public DateTime? ReviewedAtUtc { get; set; }
+    // The exact change notice awaiting explicit recorder acknowledgement; reading messages does not clear it.
+    [ConcurrencyCheck]
+    public Guid? PendingReviewMessagePubId { get; set; }
     public DateTime? IrrigationHeadLinkedAtUtc { get; set; }
 
     [MaxLength(32)]

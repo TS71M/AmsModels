@@ -27,6 +27,15 @@ public sealed class IrrigationNozzleConfiguration
     [Required, MaxLength(160)]
     public string Name { get; set; } = "";
 
+    [MaxLength(80)]
+    public string MainNozzleNumber { get; set; } = "";
+
+    [MaxLength(120)]
+    public string GenerationCode { get; set; } = "";
+
+    public DateOnly? ValidFrom { get; set; }
+    public DateOnly? ValidUntil { get; set; }
+
     public bool IsUnknownSprinkler { get; set; }
 
     [MaxLength(2000)]

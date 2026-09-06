@@ -30,6 +30,9 @@ public sealed class IrrigationSprinklerModel
     [MaxLength(500)]
     public string? SourceUrl { get; set; }
 
+    [MaxLength(500)]
+    public string? ReferenceImageUrl { get; set; }
+
     [MaxLength(2000)]
     public string ReferenceNotes { get; set; } = "";
 
