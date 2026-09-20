@@ -18,6 +18,9 @@ public class ApplicationPlanItem
     [Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public Guid PubId { get; set; }
 
+    // Null on original/legacy rows: PubId is their logical identity.
+    public Guid? OriginApplicationPubId { get; set; }
+
     [Required]
     public int AnnualApplicationPlanId { get; set; }
 

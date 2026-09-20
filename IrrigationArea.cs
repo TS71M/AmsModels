@@ -15,6 +15,8 @@ public sealed class IrrigationArea
 
     public int IrrigationSystemId { get; set; }
     public int? FieldId { get; set; }
+    public int? SurfaceId { get; set; }
+    public Surface? Surface { get; set; }
 
     [Required, MaxLength(160)]
     public string Name { get; set; } = "";

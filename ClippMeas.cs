@@ -14,6 +14,8 @@ public partial class ClippMeas
     [Required]
     public DateTime MesTime { get; set; }
     public DateTime? PreviousCutTime { get; set; }
+    // Null denotes legacy/unspecified provenance; 1 confirmed, 2 estimated.
+    public int? CutIntervalSource { get; set; }
     public decimal MesQua { get; set; }
 
     /// <summary>

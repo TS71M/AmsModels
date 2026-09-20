@@ -2,6 +2,8 @@ namespace AmsModels;
 
 public sealed class SurfaceSprinkler
 {
+    public const int RecognitionSummaryMaxLength = 1000;
+
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int SurfaceSprinklerId { get; set; }
@@ -33,7 +35,7 @@ public sealed class SurfaceSprinkler
     [Precision(5, 4)]
     public decimal? RecognitionConfidence { get; set; }
 
-    [MaxLength(1000)]
+    [MaxLength(RecognitionSummaryMaxLength)]
     public string RecognitionSummary { get; set; } = "";
 
     public string RecognitionAnalysisJson { get; set; } = "";

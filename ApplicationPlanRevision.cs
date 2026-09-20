@@ -41,6 +41,10 @@ public class ApplicationPlanRevision
     public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow;
     public DateTime? ApprovedAtUtc { get; set; }
 
+    public Guid? LastGridOperationId { get; set; }
+    [MaxLength(64)]
+    public string LastGridOperationHash { get; set; } = "";
+
     public required AnnualApplicationPlan AnnualApplicationPlan { get; set; }
     public virtual ICollection<ApplicationPlanAreaSnapshot> AreaSnapshots { get; set; } = [];
     public virtual ICollection<ApplicationPlanProductSnapshot> ProductSnapshots { get; set; } = [];

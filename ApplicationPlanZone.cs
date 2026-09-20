@@ -10,6 +10,8 @@ public class ApplicationPlanZone
     [Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public Guid PubId { get; set; }
 
+    public Guid? OriginZonePubId { get; set; }
+
     [Required]
     public int ApplicationPlanRevisionId { get; set; }
 

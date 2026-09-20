@@ -19,6 +19,10 @@ public sealed class SprinklerDistributionProfile
     [Required, MaxLength(40)]
     public string ConfidenceLevelCode { get; set; } = "";
 
+    // Immutable source snapshot: absolute measurements and test conditions must survive normalization.
+    [MaxLength(64000)]
+    public string? MeasurementEvidenceJson { get; set; }
+
     public bool Active { get; set; } = true;
     public DateTime CreatedAtUtc { get; set; }
     public DateTime UpdatedAtUtc { get; set; }
