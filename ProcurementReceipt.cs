@@ -13,6 +13,7 @@ public class ProcurementReceipt
     public int ProcurementPurchaseOrderId { get; set; }
     public int ReceivedByUserId { get; set; }
     public DateTime ReceivedDt { get; set; } = DateTime.UtcNow;
+    public DateTime? InventoryPostedDt { get; set; }
 
     [MaxLength(100)]
     public string DeliveryReference { get; set; } = "";

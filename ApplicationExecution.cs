@@ -9,15 +9,35 @@ public class ApplicationExecution
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int ApplicationExecutionId { get; set; }
+    // Nullable during rollout so older linked-record writers remain compatible.
+    public int? FieldId { get; set; }
+    public Field? Field { get; set; }
+    public int? ApplicationExecutionPassId { get; set; }
+    public ApplicationExecutionPass? ApplicationExecutionPass { get; set; }
+
+    // Corrections append a successor; the original measurement remains intact.
+    public int? ReplacesExecutionId { get; set; }
+    public ApplicationExecution? ReplacesExecution { get; set; }
+    public ApplicationExecution? Correction { get; set; }
+    public bool IsVoided { get; set; }
+    [MaxLength(1000)]
+    public string CorrectionReason { get; set; } = "";
+    public int? RecordedByUserId { get; set; }
+    public User? RecordedByUser { get; set; }
+    [Precision(9, 4)]
+    public decimal? ProductDensityKgPerLSnapshot { get; set; }
+
+    public Guid? SubmissionId { get; set; }
+    [MaxLength(64)]
+    public string SubmissionHash { get; set; } = "";
 
     [Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public Guid PubId { get; set; }
 
-    [Required]
-    public int AnnualApplicationPlanId { get; set; }
+    public int? AnnualApplicationPlanId { get; set; }
 
     public int? ApplicationPlanItemId { get; set; }
-    public int ApplicationPlanRevisionId { get; set; }
+    public int? ApplicationPlanRevisionId { get; set; }
     public DateTime ExecutedDate { get; set; }
     public DateOnly ExecutedLocalDate { get; set; }
     public int? ActualProductId { get; set; }
@@ -73,8 +93,8 @@ public class ApplicationExecution
 
     public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow;
 
-    public required AnnualApplicationPlan AnnualApplicationPlan { get; set; }
-    public required ApplicationPlanRevision ApplicationPlanRevision { get; set; }
+    public AnnualApplicationPlan? AnnualApplicationPlan { get; set; }
+    public ApplicationPlanRevision? ApplicationPlanRevision { get; set; }
     public ApplicationPlanItem? ApplicationPlanItem { get; set; }
     public Product? ActualProduct { get; set; }
     public Machine? Machine { get; set; }

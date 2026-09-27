@@ -4,6 +4,7 @@ namespace AmsModels;
 [Index(nameof(AnnualApplicationPlanId), nameof(RevisionNumber), IsUnique = true)]
 public class ApplicationPlanRevision
 {
+    public const int EvidenceSnapshotCapacity = 2000000;
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int ApplicationPlanRevisionId { get; set; }
 
@@ -30,7 +31,7 @@ public class ApplicationPlanRevision
     [MaxLength(4000)]
     public string ProductAllocationsJson { get; set; } = "";
 
-    [MaxLength(32000)]
+    [MaxLength(EvidenceSnapshotCapacity)]
     public string EvidenceSnapshotJson { get; set; } = "";
 
     [MaxLength(1000)]
@@ -51,4 +52,5 @@ public class ApplicationPlanRevision
     public virtual ICollection<ApplicationPlanItem> PlannedApplications { get; set; } = [];
     public virtual ICollection<ApplicationExecution> Executions { get; set; } = [];
     public virtual ICollection<ApplicationPlanZone> Zones { get; set; } = [];
+    public virtual ICollection<ApplicationPlanPass> ApplicationPasses { get; set; } = [];
 }

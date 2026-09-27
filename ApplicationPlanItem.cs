@@ -21,6 +21,10 @@ public class ApplicationPlanItem
     // Null on original/legacy rows: PubId is their logical identity.
     public Guid? OriginApplicationPubId { get; set; }
 
+    // Historical reviewed source, not current planning evidence or editable notes.
+    [MaxLength(32000)]
+    public string? ImportSourceJson { get; set; }
+
     [Required]
     public int AnnualApplicationPlanId { get; set; }
 
@@ -28,6 +32,7 @@ public class ApplicationPlanItem
     public int ApplicationPlanRevisionId { get; set; }
 
     public int? ApplicationPlanZoneId { get; set; }
+    public int? ApplicationPlanPassId { get; set; }
 
     public DateTime PlannedDate { get; set; }
     public DateOnly PlannedLocalDate { get; set; }
@@ -75,6 +80,7 @@ public class ApplicationPlanItem
     public required AnnualApplicationPlan AnnualApplicationPlan { get; set; }
     public required ApplicationPlanRevision ApplicationPlanRevision { get; set; }
     public ApplicationPlanZone? ApplicationPlanZone { get; set; }
+    public ApplicationPlanPass? ApplicationPlanPass { get; set; }
     public Product? Product { get; set; }
     public ApplicationPlanProductSnapshot? ApplicationPlanProductSnapshot { get; set; }
     public Machine? Machine { get; set; }

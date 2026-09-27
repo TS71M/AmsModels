@@ -26,6 +26,9 @@ public class PurchaseRequisition
     public ProcurementUrgency Urgency { get; set; } = ProcurementUrgency.Routine;
     public bool AllowSubstitution { get; set; }
 
+    // Explicit request choice; the hub may also be the field owner, so IDs cannot encode this.
+    public bool BypassCentralReview { get; set; }
+
     [ConcurrencyCheck]
     public Guid ConcurrencyToken { get; set; } = Guid.NewGuid();
 

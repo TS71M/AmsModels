@@ -4,6 +4,7 @@ namespace AmsModels;
 [Index(nameof(ApplicationPlanRevisionId), nameof(SourceAreaPubId), IsUnique = true)]
 public class ApplicationPlanAreaSnapshot
 {
+    public const int SurfaceSnapshotCapacity = 32000;
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int ApplicationPlanAreaSnapshotId { get; set; }
 
@@ -23,7 +24,7 @@ public class ApplicationPlanAreaSnapshot
     [Precision(12, 1)]
     public decimal SurfaceAreaM2 { get; set; }
 
-    [MaxLength(32000)]
+    [MaxLength(SurfaceSnapshotCapacity)]
     public string SurfaceSnapshotJson { get; set; } = "";
 
     public required ApplicationPlanRevision ApplicationPlanRevision { get; set; }
