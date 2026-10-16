@@ -16,6 +16,10 @@ public sealed class ApplicationPlanZoneNutrientTarget
     [Precision(10, 3)]
     public decimal AnnualTargetGramsPerM2 { get; set; }
 
+    // Null is legacy/unspecified monthly intent, never twelve inferred zeros.
+    [MaxLength(2000)]
+    public string? MonthlyTargetsJson { get; set; }
+
     [Precision(10, 3)]
     public decimal? MinimumGramsPerM2 { get; set; }
 

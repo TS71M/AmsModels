@@ -28,6 +28,11 @@ public sealed class ApplicationPlanZoneProduct
     [MaxLength(1000)]
     public string Notes { get; set; } = "";
 
+    // Optional annual/monthly intent in this frozen product's quantity unit.
+    // Independent of scheduled applications and material-purchase allocations.
+    [MaxLength(4000)]
+    public string? AllocationIntentJson { get; set; }
+
     public required ApplicationPlanZone ApplicationPlanZone { get; set; }
     public required ApplicationPlanProductSnapshot ApplicationPlanProductSnapshot { get; set; }
 }

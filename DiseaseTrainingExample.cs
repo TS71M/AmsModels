@@ -41,6 +41,12 @@ public partial class DiseaseTrainingExample
     [MaxLength(4000)]
     public string? ReviewNote { get; set; }
 
+    [MaxLength(40)]
+    public string? ConfirmationMethod { get; set; }
+
+    [MaxLength(120)]
+    public string? OutbreakGroup { get; set; }
+
     public bool IsApproved { get; set; }
     public bool UseForLearning { get; set; } = true;
     public bool UseForRetrieval { get; set; } = true;
