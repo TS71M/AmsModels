@@ -17,9 +17,12 @@ public class SoilTestChem
     public int ChemId { get; set; }
 
     public decimal Value { get; set; }
+
+    [MaxLength(100)]
+    public string? TextValue { get; set; }
     public int? UnitId { get; set; }
 
     public required Chemical Chem { get; set; }
     public required SoilTest SoiTes { get; set; }
     public Unit? Unit { get; set; }
-}
+}

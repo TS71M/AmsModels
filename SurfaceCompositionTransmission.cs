@@ -60,6 +60,12 @@ public class SurfaceCompositionTransmission
 
     public string? RerunResultJson { get; set; }
 
+    // Immutable input provenance for this saved analysis, independent of later
+    // edits or retirement of catalogue references. Historical results stay null.
+    [MaxLength(2000000)]
+    public string? AnalysisEvidenceJson { get; set; }
+
+
     [MaxLength(32)]
     public string? AnalysisReviewOutcome { get; set; }
 
