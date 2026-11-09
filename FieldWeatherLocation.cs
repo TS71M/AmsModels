@@ -1,11 +1,5 @@
 namespace AmsModels;
 
-public static class FieldWeatherLocationConstraints
-{
-    public const int MaxAdditionalLocations = 2;
-    public const int MaxNameLength = 80;
-}
-
 [Index(nameof(PubId), IsUnique = true)]
 [Index(nameof(FieldId), nameof(DisplayOrder), IsUnique = true)]
 public sealed class FieldWeatherLocation

@@ -1,7 +1,5 @@
 namespace AmsModels;
 
-public enum ChemPolicyOwnerType { Ibu = 1, Field = 2 }
-
 [Index(nameof(OwnerType), nameof(OwnerId), nameof(ChemId), IsUnique = true)]
 [Index(nameof(OwnerType), nameof(OwnerId))]
 [Index(nameof(ChemId))]

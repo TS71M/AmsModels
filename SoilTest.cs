@@ -19,6 +19,8 @@ public partial class SoilTest
     public bool Ignore { get; set; }
     public string? MethodCode { get; set; }
     public string? MethodRaw { get; set; }
+    public int? OriginalDocumentId { get; set; }
+    public LabReportDocument? OriginalDocument { get; set; }
 
     public virtual string SurfaceName => Surface.SurfaceName;
 

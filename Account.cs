@@ -11,6 +11,14 @@ public partial class Account
     [Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public Guid PubId { get; set; }
     public int AccountGroupId { get; set; }
+    public int? IbuId { get; set; }
+    public Ibu? Ibu { get; set; }
+    public int? ReferenceAccountId { get; set; }
+    public Account? ReferenceAccount { get; set; }
+    public bool IsActive { get; set; } = true;
+    public long Version { get; set; }
+    public DateTime? UpdatedAtUtc { get; set; }
+    public int? UpdatedByUserId { get; set; }
 
     [Display(Name = "Account Number")]
     public int AccNum { get; set; }

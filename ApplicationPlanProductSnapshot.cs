@@ -34,13 +34,11 @@ public class ApplicationPlanProductSnapshot
     [Precision(8, 4)]
     public decimal? DensityKgPerL { get; set; }
 
-    [Precision(10, 3)]
     public decimal PackSize { get; set; }
 
     [MaxLength(20)]
     public string PackUnitLabel { get; set; } = "";
 
-    [Precision(10, 2)]
     public decimal UnitCost { get; set; }
 
     [Precision(12, 3)]

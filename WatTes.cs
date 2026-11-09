@@ -37,6 +37,8 @@ public partial class WatTes
     public string? SamplerName { get; set; }
 
     public bool Ignore { get; set; }
+    public int? OriginalDocumentId { get; set; }
+    public LabReportDocument? OriginalDocument { get; set; }
 
     public required Field Field { get; set; }
 

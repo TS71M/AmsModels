@@ -1,4 +1,4 @@
-﻿namespace AmsModels;
+namespace AmsModels;
 
 public sealed class FieldClimateNormal
 {
@@ -24,10 +24,4 @@ public sealed class FieldClimateNormal
 
     public required Field Field { get; set; }
     public List<FieldClimateNormalMonth> Months { get; set; } = [];
-}
-
-public enum ClimateNormalSourceType : short
-{
-    Manual = 1,
-    Calculated = 2
 }

@@ -31,6 +31,11 @@ public sealed class PasswordResetEmailJob
     [MaxLength(512)]
     public string? LastError { get; set; }
 
+    // Protected with the existing persistent application key ring; erased when
+    // delivery ends. Retries must not change the credential a second time.
+    [MaxLength(4096)]
+    public string? ProtectedDelivery { get; set; }
+
     public User? User { get; set; }
 }
 

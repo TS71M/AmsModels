@@ -1,17 +1,5 @@
 namespace AmsModels;
 
-public enum ParentEntityType
-{
-    Ibu,
-    Address,
-    Architect,
-    Coordinates,
-    DoG,
-    Field,
-    Supplier,
-    User
-}
-
 public partial class Address
 {
     [Key]
