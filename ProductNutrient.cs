@@ -22,4 +22,5 @@ public class ProductNutrient
 
     public required Nutrient Nutrient { get; set; }
     public required Product Product { get; set; }
+    public ICollection<ProductNutrientForm> Forms { get; set; } = [];
 }

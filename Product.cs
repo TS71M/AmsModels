@@ -85,6 +85,7 @@ public partial class Product
     public AppImage? AppImage { get; set; }
     public Account Account { get; set; } = null!;
     public Field? Field { get; set; }
+    public ICollection<ProductAdditionalField> AdditionalFields { get; set; } = [];
     public Ibu Ibu { get; set; } = null!;
     public ProductType? ProductType { get; set; }
     public Unit UniWei { get; set; } = null!;
