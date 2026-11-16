@@ -32,7 +32,8 @@ public partial class Disease
     public bool Dry { get; set; }
     public bool VeryDry { get; set; }
 
-    public bool IsValid => TempMin < TempMax;
+    public bool IsValid => HasValidTemperatureRange(TempMin, TempMax);
+    public static bool HasValidTemperatureRange(decimal minimum, decimal maximum) => minimum < maximum;
     public string DiseaseCyclePictureImage => ImageX.ImageToString(DiseaseCyclePicture?.ImageFile, ImageX.StandardImage.NoImage);
     public string IndicatorPictureImage => ImageX.ImageToString(IndicatorPicture?.ImageFile, ImageX.StandardImage.NoImage);
 

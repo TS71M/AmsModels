@@ -22,7 +22,10 @@ public partial class Name
     public string LastName { get; set; } = "";
 
     [Display(Name = "Name")]
-    public string FullName => $"{FirstName} {MiddleName ?? string.Empty} {LastName}".Trim();
+    public string FullName => FormatFullName(FirstName, MiddleName, LastName);
+
+    public static string FormatFullName(string? firstName, string? middleName, string? lastName)
+        => $"{firstName} {middleName ?? string.Empty} {lastName}".Trim();
 
     public required Ibu Ibu { get; set; }
 }

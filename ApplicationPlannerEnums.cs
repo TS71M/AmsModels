@@ -35,7 +35,8 @@ public enum ApplicationPlanRevisionStatus
 {
     Draft = 0,
     Approved = 1,
-    Superseded = 2
+    Superseded = 2,
+    Refused = 3
 }
 
 public enum ApplicationPlanItemScheduleStatus
