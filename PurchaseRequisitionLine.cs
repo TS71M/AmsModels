@@ -17,6 +17,11 @@ public class PurchaseRequisitionLine
     [Precision(18, 3)]
     public decimal Quantity { get; set; }
 
+    // Null identifies requests saved before the quantity unit was captured.
+    [MaxLength(10)]
+    public string? PackUnitLabelSnapshot { get; set; }
+
+
     [MaxLength(500)]
     public string Notes { get; set; } = "";
 

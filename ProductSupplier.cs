@@ -35,6 +35,9 @@ public class ProductSupplier
     [Display(Name = "Minimum Order Qty")]
     public decimal? MinimumOrderQty { get; set; }
 
+    [MaxLength(10)]
+    public string? TermsUnitLabelSnapshot { get; set; }
+
     public bool IsPreferred { get; set; }
     public bool CanRequestPrice { get; set; } = true;
     public bool CanOrder { get; set; } = true;

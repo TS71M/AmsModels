@@ -39,6 +39,10 @@ public class AnnualApplicationPlan
     [MaxLength(4000)]
     public string ProductAllocationsJson { get; set; } = "";
 
+    public const int TreatmentLinksCapacity = 65536;
+    [MaxLength(TreatmentLinksCapacity)]
+    public string? TreatmentLinksJson { get; set; }
+
     public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow;
     public DateTime? UpdatedAtUtc { get; set; }
 

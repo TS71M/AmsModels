@@ -17,6 +17,8 @@ public partial class Area
 
     [Required]
     public int FieldId { get; set; }
+    public int? AreaTreatmentLinkId { get; set; }
+    public AreaTreatmentLink? TreatmentLink { get; set; }
 
     public bool Active { get; set; } = true;
 
